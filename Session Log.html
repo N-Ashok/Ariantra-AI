@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ariantra — Session Log</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 13px;
+      color: #111;
+      background: #fff;
+      padding: 32px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 3px solid #111;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .header-title {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .header-sub {
+      font-size: 11px;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    /* Meta row */
+    .meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .meta-field label {
+      display: block;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #888;
+      margin-bottom: 4px;
+    }
+    .meta-field .line {
+      border-bottom: 1.5px solid #ccc;
+      height: 22px;
+    }
+
+    /* Section */
+    .section {
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #888;
+      border-top: 1px solid #ddd;
+      padding-top: 8px;
+      margin-bottom: 12px;
+    }
+
+    /* Field */
+    .field {
+      margin-bottom: 12px;
+    }
+    .field label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #333;
+    }
+    .field .line {
+      border-bottom: 1px solid #ccc;
+      height: 22px;
+      margin-bottom: 6px;
+    }
+    .field .lines-2 {
+      height: 48px;
+      border-bottom: 1px solid #ccc;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 21px,
+        #e8e8e8 21px,
+        #e8e8e8 22px
+      );
+    }
+    .field .lines-3 {
+      height: 70px;
+      border-bottom: 1px solid #ccc;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 21px,
+        #e8e8e8 21px,
+        #e8e8e8 22px
+      );
+    }
+
+    /* Energy checkboxes */
+    .energy-row {
+      display: flex;
+      gap: 24px;
+      margin-top: 2px;
+    }
+    .check-option {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+    }
+    .check-box {
+      width: 13px;
+      height: 13px;
+      border: 1.5px solid #999;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    /* Inputs table */
+    .inputs-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .inputs-table th {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #888;
+      font-weight: 600;
+      text-align: left;
+      padding: 0 8px 6px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .inputs-table td {
+      padding: 8px 8px 8px 0;
+      vertical-align: top;
+      border-bottom: 1px solid #eee;
+    }
+    .inputs-table td:first-child {
+      width: 44%;
+    }
+    .inputs-table td:nth-child(2) {
+      width: 32%;
+    }
+    .inputs-table td:last-child {
+      width: 24%;
+    }
+    .input-write-line {
+      border-bottom: 1px solid #ccc;
+      height: 20px;
+      width: 100%;
+    }
+    .check-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .check-list .check-option {
+      font-size: 11px;
+    }
+
+    /* Two column */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* Highlight box */
+    .highlight-field .lines-2 {
+      border: 1.5px solid #111;
+      background-color: #f9f9f9;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 21px,
+        #e2e2e2 21px,
+        #e2e2e2 22px
+      );
+      padding: 4px 6px;
+    }
+    .highlight-field label {
+      font-size: 12px;
+      color: #111;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 24px;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: #aaa;
+    }
+
+    @media print {
+      body { padding: 20px; }
+      @page { margin: 1.5cm; size: A4; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="header-title">ARIANTRA</div>
+      <div class="header-sub">Session Log</div>
+    </div>
+    <div style="text-align:right; font-size:11px; color:#888;">
+      One sheet per session &nbsp;·&nbsp; Fill within 5 mins of ending
+    </div>
+  </div>
+
+  <!-- Meta -->
+  <div class="meta">
+    <div class="meta-field">
+      <label>Kid's Name</label>
+      <div class="line"></div>
+    </div>
+    <div class="meta-field">
+      <label>Session #</label>
+      <div class="line"></div>
+    </div>
+    <div class="meta-field">
+      <label>Date</label>
+      <div class="line"></div>
+    </div>
+    <div class="meta-field">
+      <label>Duration</label>
+      <div class="line"></div>
+    </div>
+  </div>
+
+  <!-- The Game -->
+  <div class="section">
+    <div class="section-title">The Game</div>
+    <div class="two-col">
+      <div class="field">
+        <label>Game name / type</label>
+        <div class="line"></div>
+      </div>
+      <div class="field">
+        <label>New game or continuing?</label>
+        <div class="energy-row">
+          <div class="check-option"><div class="check-box"></div> New</div>
+          <div class="check-option"><div class="check-box"></div> Continuing</div>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>What they built this session (one line)</label>
+      <div class="line"></div>
+    </div>
+  </div>
+
+  <!-- The Kid -->
+  <div class="section">
+    <div class="section-title">The Kid</div>
+    <div class="field">
+      <label>Energy today</label>
+      <div class="energy-row">
+        <div class="check-option"><div class="check-box"></div> High — couldn't stop</div>
+        <div class="check-option"><div class="check-box"></div> Medium — steady</div>
+        <div class="check-option"><div class="check-box"></div> Low — needed pulling</div>
+      </div>
+    </div>
+    <div class="two-col" style="margin-top:12px;">
+      <div class="field">
+        <label>Where they got stuck</label>
+        <div class="lines-2"></div>
+      </div>
+      <div class="field">
+        <label>How they got unstuck</label>
+        <div class="lines-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Your Inputs -->
+  <div class="section">
+    <div class="section-title">Your Inputs</div>
+    <table class="inputs-table">
+      <thead>
+        <tr>
+          <th>What you said</th>
+          <th>Type</th>
+          <th>Kid's response</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="input-write-line"></div><div class="input-write-line" style="margin-top:6px;"></div></td>
+          <td>
+            <div class="check-list">
+              <div class="check-option"><div class="check-box"></div> Unblocking</div>
+              <div class="check-option"><div class="check-box"></div> Naming</div>
+              <div class="check-option"><div class="check-box"></div> Reframe</div>
+              <div class="check-option"><div class="check-box"></div> Challenge</div>
+            </div>
+          </td>
+          <td><div class="input-write-line"></div><div class="input-write-line" style="margin-top:6px;"></div></td>
+        </tr>
+        <tr>
+          <td><div class="input-write-line"></div><div class="input-write-line" style="margin-top:6px;"></div></td>
+          <td>
+            <div class="check-list">
+              <div class="check-option"><div class="check-box"></div> Unblocking</div>
+              <div class="check-option"><div class="check-box"></div> Naming</div>
+              <div class="check-option"><div class="check-box"></div> Reframe</div>
+              <div class="check-option"><div class="check-box"></div> Challenge</div>
+            </div>
+          </td>
+          <td><div class="input-write-line"></div><div class="input-write-line" style="margin-top:6px;"></div></td>
+        </tr>
+        <tr>
+          <td><div class="input-write-line"></div><div class="input-write-line" style="margin-top:6px;"></div></td>
+          <td>
+            <div class="check-list">
+              <div class="check-option"><div class="check-box"></div> Unblocking</div>
+              <div class="check-option"><div class="check-box"></div> Naming</div>
+              <div class="check-option"><div class="check-box"></div> Reframe</div>
+              <div class="check-option"><div class="check-box"></div> Challenge</div>
+            </div>
+          </td>
+          <td><div class="input-write-line"></div><div class="input-write-line" style="margin-top:6px;"></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Concept Discovered -->
+  <div class="section">
+    <div class="section-title">Concept Discovered</div>
+    <div class="two-col">
+      <div class="field">
+        <label>What they figured out</label>
+        <div class="lines-2"></div>
+      </div>
+      <div class="field">
+        <label>Did you name it?</label>
+        <div style="margin-top:2px;">
+          <div class="check-option" style="margin-bottom:6px;"><div class="check-box"></div> Yes — what you said:</div>
+          <div class="line" style="margin-left:20px;"></div>
+          <div class="check-option" style="margin-top:8px;"><div class="check-box"></div> No — not the right moment</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- End of Session -->
+  <div class="section">
+    <div class="section-title">End of Session</div>
+    <div class="field">
+      <label>What they presented / explained to you</label>
+      <div class="lines-2"></div>
+    </div>
+    <div class="field highlight-field">
+      <label>Their exact words — "next time I want to..."</label>
+      <div class="lines-2"></div>
+    </div>
+  </div>
+
+  <!-- One Observation -->
+  <div class="section">
+    <div class="section-title">One Observation About This Kid</div>
+    <div class="field" style="font-size:10px; color:#888; margin-bottom:6px;">
+      About how they think — not what they built
+    </div>
+    <div class="field">
+      <div class="lines-3"></div>
+    </div>
+    <div class="field">
+      <label>Watch for next session</label>
+      <div class="lines-2"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span>ARIANTRA &nbsp;·&nbsp; Game Building Bootcamp</span>
+    <span>Open in browser · Print · Ctrl+P</span>
+  </div>
+
+</body>
+</html>

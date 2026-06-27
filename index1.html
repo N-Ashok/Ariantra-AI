@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ── SEO: primary ── -->
+  <title>AI for Kids | Game Development Classes — Build Games with AI | Ariantra</title>
+  <meta name="description" content="Ariantra is an AI for kids class where children build their first game in 45 minutes — no coding. Online game development classes that teach kids to make games through AI. Book a free first session.">
+  <meta name="keywords" content="ai for kids, game development for kids, games developing, build games with AI, game through AI, kids coding classes, kids game design classes, AI classes for kids, online game making for children">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Ariantra">
+  <link rel="canonical" href="https://ariantra.com/">
+  <meta name="theme-color" content="#FF5C00">
+
+  <!-- ── Open Graph (WhatsApp / Facebook / LinkedIn) ── -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ariantra">
+  <meta property="og:title" content="AI for Kids — Build Your First Game in 45 Minutes | Ariantra">
+  <meta property="og:description" content="Online AI game-development classes for kids. Your child builds a real game through AI — no coding, no tutorials. Book a free first session.">
+  <meta property="og:url" content="https://ariantra.com/">
+  <meta property="og:image" content="https://ariantra.com/ariantra-site.png">
+  <meta property="og:image:alt" content="Kids building games with AI at Ariantra">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- ── Twitter / X card ── -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI for Kids — Build Your First Game in 45 Minutes | Ariantra">
+  <meta name="twitter:description" content="Online AI game-development classes for kids. Your child builds a real game through AI — no coding. Book a free first session.">
+  <meta name="twitter:image" content="https://ariantra.com/ariantra-site.png">
+
+  <!-- ── Favicon ── -->
+  <link rel="icon" href="https://ariantra.com/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="https://ariantra.com/apple-touch-icon.png">
+
+  <!-- ── Structured data: Organization + Course + FAQ ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "EducationalOrganization",
+        "@id": "https://ariantra.com/#org",
+        "name": "Ariantra",
+        "url": "https://ariantra.com/",
+        "logo": "https://ariantra.com/ariantra-site.png",
+        "description": "AI for kids — online game-development classes where children build real games through AI, with no coding.",
+        "email": "contact@ariantra.com",
+        "sameAs": []
+      },
+      {
+        "@type": "Course",
+        "name": "AI Game Development for Kids",
+        "description": "Kids build their first game in 45 minutes using AI — no coding, no tutorials. They decide what to build, build it with AI, and explain it back to a parent.",
+        "provider": { "@id": "https://ariantra.com/#org" },
+        "educationalLevel": "Beginner",
+        "audience": { "@type": "EducationalAudience", "educationalRole": "Children" },
+        "hasCourseInstance": {
+          "@type": "CourseInstance",
+          "courseMode": "Online",
+          "courseWorkload": "PT45M"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does my child need coding experience to build games with AI?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. There is no coding required. If your child can describe what they want, they can build it — the AI acts as their developer." }
+          },
+          {
+            "@type": "Question",
+            "name": "What age are these AI classes for kids?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Kids old enough to have their own ideas and young enough that building something feels like magic. No coding background is required." }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take to build a game?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Kids build their first playable game in about 45 minutes in their very first session." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xcnjzr9m8t");
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRLMEHE4D6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KRLMEHE4D6');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0f172a;
+      --white: #FFFFFF;
+      --accent: #FF5C00;
+      --accent-light: #FFF0E8;
+      --grey: #F4F4F4;
+      --text-muted: #777;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #eee;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+    .nav-links .nav-link {
+      text-decoration: none;
+      color: var(--black);
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.15s;
+    }
+    .nav-links .nav-link:hover { color: var(--accent); }
+    .nav-book {
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      padding: 9px 18px;
+      border-radius: 24px;
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+    .nav-book:hover { background: #e65300; }
+    html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 76px; }
+    @media (max-width: 800px) {
+      .nav-links .nav-link { display: none; }   /* keep just the Book button on small screens */
+      .nav-links { gap: 0; }
+    }
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-decoration: none;
+      gap: 0;
+    }
+    .logo-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 17px;
+      font-weight: 300;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      color: var(--black);
+      line-height: 1;
+    }
+    .logo-divider {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 5px;
+      margin: 4px 0 3px;
+    }
+    .logo-line {
+      flex: 1;
+      height: 1px;
+      background: var(--black);
+      opacity: 0.3;
+    }
+    .logo-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .logo-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 7px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      line-height: 1;
+    }
+    .nav-btn {
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav-btn:hover { opacity: 0.88; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 140px 24px 100px;
+      text-align: center;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 6vw, 62px);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -1.5px;
+      max-width: 820px;
+      margin: 0 auto 24px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .hero p {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: #aaa;
+      max-width: 520px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 700;
+      padding: 18px 36px;
+      border-radius: 12px;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .hero-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+    .hero-cta svg { flex-shrink: 0; }
+    .hero-note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    /* ── SECTION WRAPPER ── */
+    section { padding: 80px 24px; }
+    .container { max-width: 800px; margin: 0 auto; }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      line-height: 1.2;
+      margin-bottom: 48px;
+    }
+
+    /* ── WHAT HAPPENS ── */
+    .what { background: var(--grey); }
+    .steps { display: flex; flex-direction: column; gap: 0; }
+    .step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 20px;
+      padding: 28px 0;
+      border-bottom: 1px solid #e0e0e0;
+      align-items: start;
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      width: 48px;
+      height: 48px;
+      background: var(--accent);
+      color: var(--white);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .step-body h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: -0.3px;
+    }
+    .step-body p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    /* ── THE RULE ── */
+    .rule { background: var(--white); }
+    .rule-card {
+      background: var(--black);
+      color: var(--white);
+      border-radius: 20px;
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .rule-card::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      background: var(--accent);
+      border-radius: 50%;
+      opacity: 0.12;
+    }
+    .rule-card h2 {
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+    }
+    .rule-card h2 span { color: var(--accent); }
+    .rule-card p {
+      font-size: 16px;
+      color: #aaa;
+      line-height: 1.7;
+      max-width: 520px;
+    }
+
+    /* ── QUOTE ── */
+    .quote-section { background: var(--accent-light); }
+    .quote-card {
+      border-left: 4px solid var(--accent);
+      padding: 32px 32px 32px 36px;
+      background: var(--white);
+      border-radius: 0 16px 16px 0;
+    }
+    .quote-text {
+      font-size: clamp(18px, 3vw, 24px);
+      font-weight: 600;
+      line-height: 1.5;
+      letter-spacing: -0.3px;
+      margin-bottom: 16px;
+      color: var(--black);
+    }
+    .quote-author {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ── WHO IT'S FOR ── */
+    .for-section { background: var(--white); }
+    .for-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .for-card {
+      background: var(--grey);
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .for-card .icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    .for-card h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .for-card p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* ── FINAL CTA ── */
+    .cta-section {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 100px 24px;
+    }
+    .cta-section h2 {
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .cta-section h2 span { color: var(--accent); }
+    .cta-section p {
+      color: #888;
+      font-size: 17px;
+      margin-bottom: 40px;
+    }
+    .cta-big {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--accent);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 20px 44px;
+      border-radius: 14px;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .cta-big:hover { opacity: 0.88; transform: translateY(-2px); }
+    .cta-free-note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    /* ── VIDEO SECTION ── */
+    .video-section {
+      background: var(--black);
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .video-section .section-label { color: var(--accent); }
+    .video-section .section-title { color: #fff; }
+    .video-sub {
+      color: #94a3b8;
+      font-size: 16px;
+      max-width: 600px;
+      margin: -22px auto 36px;
+      line-height: 1.7;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      max-width: 940px;
+      margin: 0 auto;
+    }
+    @media (max-width: 760px) {
+      .video-grid { grid-template-columns: 1fr; gap: 36px; }
+    }
+    .video-item .video-head {
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 16px 50px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .video-facade {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .video-facade::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.28);
+      transition: background 0.15s;
+    }
+    .video-wrap:hover .video-facade::before { background: rgba(0,0,0,0.15); }
+    .video-play {
+      position: relative;
+      z-index: 2;
+      width: 72px;
+      height: 50px;
+      border: none;
+      border-radius: 14px;
+      background: #ff0000;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s, background 0.15s;
+    }
+    .video-wrap:hover .video-play { background: #ff2222; transform: scale(1.07); }
+    .video-play::after {
+      content: '';
+      border-style: solid;
+      border-width: 10px 0 10px 17px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 4px;
+    }
+    .video-caption {
+      color: #94a3b8;
+      font-size: 13.5px;
+      margin-top: 18px;
+    }
+    .video-caption strong { color: #fff; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      color: #cbd5e1;
+      padding: 56px 24px 28px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-brand .footer-logo {
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+    .footer-brand .footer-logo span { color: var(--accent); }
+    .footer-tag {
+      font-size: 13px;
+      color: #94a3b8;
+      margin: 6px 0 14px;
+    }
+    .footer-desc {
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: #94a3b8;
+      max-width: 360px;
+    }
+    .footer-col h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .footer-col a, .footer-col p {
+      display: block;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #94a3b8;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 20px;
+      font-size: 12px;
+      color: #64748b;
+    }
+    .footer-bottom .footer-legal span { display: block; }
+    @media (max-width: 700px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ── MOBILE ── */
+    /* ── GAME CARDS ── */
+    .game-card {
+      display: block;
+      text-decoration: none;
+      color: var(--black);
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid #eee;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .game-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(255,92,0,0.15);
+    }
+    .game-preview {
+      position: relative;
+      height: 155px;
+      overflow: hidden;
+      background: #0a0a0a;
+    }
+    .game-preview iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 900px;
+      height: 600px;
+      transform: scale(0.27);
+      transform-origin: top left;
+      pointer-events: none;
+      border: none;
+    }
+    .game-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 10px 12px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .game-card:hover .game-overlay { opacity: 1; }
+    .play-btn {
+      background: var(--accent);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .game-info {
+      padding: 12px 14px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .game-name { font-size: 14px; font-weight: 700; }
+    .game-tag { font-size: 11px; color: var(--text-muted); }
+    .game-preview img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .game-card:hover .game-preview img { transform: scale(1.04); }
+    .game-overlay { opacity: 1; background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 60%); }
+    .game-card:hover .game-overlay { background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.15) 100%); }
+
+    /* ── KID CREDIT (who built the game) ── */
+    .game-credit {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 14px 14px;
+      border-top: 1px solid #f0f0f0;
+      margin-top: -2px;
+      padding-top: 10px;
+    }
+    .kid-avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid var(--accent);
+      background: var(--accent-light);
+    }
+    /* Fallback initial-circle when there is no photo */
+    .kid-avatar-initial {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-light);
+      border: 2px solid var(--accent);
+    }
+    .kid-meta {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.3;
+      min-width: 0;
+    }
+    .kid-name { font-size: 12px; font-weight: 700; color: var(--black); }
+    .kid-when { font-size: 11px; color: var(--text-muted); }
+    .kid-parents { font-size: 10px; color: var(--text-muted); }
+
+    /* ── INLINE PLAY (play in the card, YouTube-style) ── */
+    .game-card.playing .game-preview { height: 260px; }
+    .game-card.playing .game-overlay { display: none; }
+    .game-preview .game-frame-live {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      transform: none;          /* override the scaled-thumbnail iframe rule */
+      pointer-events: auto;     /* make it actually playable */
+      border: 0;
+      display: block;
+      background: #0a0a0a;
+      z-index: 4;
+    }
+    .game-controls {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      display: flex;
+      gap: 6px;
+      z-index: 6;
+    }
+    .game-ctrl-btn {
+      width: 30px;
+      height: 30px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      font-size: 14px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+    }
+    .game-ctrl-btn:hover { background: var(--accent); }
+    /* loading spinner while a game iframe loads */
+    .game-loading {
+      position: absolute;
+      inset: 0;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      background: #0a0a0a;
+    }
+    .game-spinner {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.18);
+      border-top-color: var(--accent);
+      animation: gameSpin 0.8s linear infinite;
+    }
+    .game-loading span { font-size: 12px; font-weight: 600; color: #94a3b8; }
+    @keyframes gameSpin { to { transform: rotate(360deg); } }
+    .game-ctrl-btn.labeled {
+      width: auto;
+      border-radius: 16px;
+      padding: 0 12px;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 700;
+      background: var(--accent);
+    }
+    .game-ctrl-btn.labeled:hover { background: #e65300; }
+    /* "tap to expand" hint that appears when a game starts inline */
+    .game-hint {
+      position: absolute;
+      left: 50%;
+      bottom: 12px;
+      transform: translateX(-50%);
+      z-index: 7;
+      background: rgba(0,0,0,0.85);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 22px;
+      white-space: nowrap;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+      pointer-events: none;
+      animation: hintBob 1.4s ease-in-out infinite;
+    }
+    .game-hint b { color: var(--accent); }
+    .game-hint.hide { opacity: 0; transition: opacity 0.5s ease; }
+    @keyframes hintBob {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(-4px); }
+    }
+
+    /* ── GAME MODAL ── */
+    .game-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      backdrop-filter: blur(6px);
+    }
+    .game-modal-overlay.open {
+      display: flex;
+      animation: fadeIn 0.2s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .game-modal {
+      background: #111;
+      border-radius: 16px;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      max-width: calc(100vw - 24px);
+      max-height: calc(100vh - 24px);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 32px 100px rgba(0,0,0,0.8);
+      animation: slideUp 0.22s ease;
+    }
+    @keyframes slideUp { from { transform: translateY(16px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .game-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      border-bottom: 1px solid #222;
+      flex-shrink: 0;
+    }
+    .game-modal-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .game-modal-title span {
+      background: var(--accent);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .game-modal-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .game-modal-newtab {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #222;
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .game-modal-newtab:hover { background: #333; }
+    .game-modal-close {
+      background: #222;
+      border: none;
+      color: #fff;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+    .game-modal-close:hover { background: #e53e3e; }
+    .game-modal-body {
+      flex: 1;
+      min-height: 0;
+      position: relative;
+    }
+    .game-modal-body iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* ── ABOUT ── */
+    .about-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .about-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+    .about-avatar img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .about-name {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+    .about-creds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .about-badge {
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    .about-bio {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+      margin-top: 4px;
+    }
+
+    /* ── FAQ ── */
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item {
+      border-bottom: 1px solid #eee;
+    }
+    .faq-item:first-child { border-top: 1px solid #eee; }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--black);
+      cursor: pointer;
+      text-align: left;
+      gap: 16px;
+      transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--accent); }
+    .faq-q.open { color: var(--accent); }
+    .faq-icon {
+      font-size: 22px;
+      font-weight: 300;
+      flex-shrink: 0;
+      color: var(--accent);
+      transition: transform 0.25s;
+      line-height: 1;
+    }
+    .faq-q.open .faq-icon { transform: rotate(45deg); }
+    .faq-a {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.75;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0;
+    }
+    .faq-a.open {
+      max-height: 200px;
+      padding-bottom: 20px;
+    }
+
+    /* ── FLOATING WHATSAPP ── */
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 14px 20px 14px 16px;
+      border-radius: 50px;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.3s;
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    .wa-float.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .wa-float:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(37,211,102,0.55);
+    }
+    .wa-float::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50px;
+      background: #25D366;
+      animation: waPulse 2.5s ease-out infinite;
+      z-index: -1;
+    }
+    @keyframes waPulse {
+      0%   { transform: scale(1);   opacity: 0.6; }
+      70%  { transform: scale(1.18); opacity: 0; }
+      100% { transform: scale(1.18); opacity: 0; }
+    }
+    @media (max-width: 600px) {
+      .wa-float span { display: none; }
+      .wa-float { padding: 16px; bottom: 20px; right: 20px; border-radius: 50%; }
+    }
+
+    @media (max-width: 600px) {
+      .rule-card { padding: 32px 24px; }
+      .quote-card { padding: 24px 20px 24px 28px; }
+      footer { justify-content: center; text-align: center; }
+      .game-modal-newtab span { display: none; }
+      /* full-screen game player on phones */
+      .game-modal-overlay { padding: 0; }
+      .game-modal {
+        border-radius: 0;
+        width: 100vw;
+        height: 100vh;
+        max-width: 100vw;
+        max-height: 100vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="logo">
+      <span class="logo-text">Ariantra</span>
+      <span class="logo-divider">
+        <span class="logo-line"></span>
+        <span class="logo-dot"></span>
+        <span class="logo-line"></span>
+      </span>
+      <span class="logo-sub">AI Foundry</span>
+    </a>
+    <div class="nav-links">
+      <a href="#games" class="nav-link">Games</a>
+      <a href="#videos" class="nav-link">Videos</a>
+      <a href="#how" class="nav-link">How it works</a>
+      <a href="#team" class="nav-link">Our team</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="https://wa.me/918800364622?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20first%20session%20for%20my%20kid."
+         target="_blank" class="nav-book">Book a free session</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-tag">Game Building for Kids</div>
+    <h1>Your kid will build their <em>first game</em> in 45 minutes.</h1>
+    <p>No coding. No tutorials. Just their idea — and an AI that builds it with them.</p>
+    <a href="https://wa.me/918800364622?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20first%20session%20for%20my%20kid."
+       class="hero-cta" target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.557 4.126 1.534 5.857L.057 23.885l6.23-1.635A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.964-1.348l-.356-.212-3.698.97.989-3.607-.233-.37A9.818 9.818 0 1112 21.818z"/>
+      </svg>
+      Book a free first session
+    </a>
+    <div class="hero-note">Free · No commitment · Takes 2 minutes to book</div>
+  </div>
+
+  <!-- GAMES KIDS BUILT -->
+  <section id="games" style="background: var(--white); padding: 80px 24px;">
+    <div class="container">
+      <div class="section-label">Real proof</div>
+      <div class="section-title">Games our kids actually built</div>
+      <p style="color: #555; font-size: 16px; margin-top: -28px; margin-bottom: 40px; line-height: 1.7;">
+        Not demos. Not templates. These are real games — built by kids aged 7 to 12 in their first few sessions.
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;">
+
+        <a href="#" class="game-card" data-url="https://a-subway-surfer.netlify.app/" data-name="Subway Surfer" data-tag="Runner">
+          <div class="game-preview"><img src="thumbnails/subway-surfer.jpg" alt="Subway Surfer"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
+          <div class="game-info"><span class="game-name">Subway Surfer</span><span class="game-tag">Runner</span></div>
+          <div class="game-credit">
+            <div class="kid-avatar-initial">A</div>
+            <div class="kid-meta"><span class="kid-name">Agilan, 10</span><span class="kid-when">Delhi</span><span class="kid-parents">Parents: Ashok &amp; Uma</span></div>
+          </div>
+        </a>
+
+        <a href="#" class="game-card" data-url="https://a-dino-race.netlify.app/" data-name="Dino Race" data-tag="Racing">
+          <div class="game-preview"><img src="thumbnails/dino-race.jpg" alt="Dino Race"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
+          <div class="game-info"><span class="game-name">Dino Race</span><span class="game-tag">Racing</span></div>
+          <div class="game-credit">
+            <div class="kid-avatar-initial">A</div>
+            <div class="kid-meta"><span class="kid-name">Amala, 7</span><span class="kid-when">Delhi</span></div>
+          </div>
+        </a>
+
+        <a href="#" class="game-card" data-url="https://m-aeroplane.netlify.app/" data-name="Aeroplane" data-tag="Action">
+          <div class="game-preview"><img src="thumbnails/aeroplane.jpg" alt="Aeroplane"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
+          <div class="game-info"><span class="game-name">Aeroplane</span><span class="game-tag">Action</span></div>
+          <div class="game-credit">
+            <div class="kid-avatar-initial">M</div>
+            <div class="kid-meta"><span class="kid-name">Myra, 9</span><span class="kid-when">Delhi</span><span class="kid-parents">Parents: Raja &amp; Ruth</span></div>
+          </div>
+        </a>
+
+        <a href="#" class="game-card" data-url="https://atharvcricket.netlify.app/" data-name="Cricket" data-tag="Sports">
+          <div class="game-preview"><img src="thumbnails/cricket.jpg" alt="Cricket"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
+          <div class="game-info"><span class="game-name">Cricket</span><span class="game-tag">Sports</span></div>
+          <div class="game-credit">
+            <div class="kid-avatar-initial">A</div>
+            <div class="kid-meta"><span class="kid-name">Atharv, 9</span><span class="kid-when">Bangalore</span><span class="kid-parents">Parents: Amit &amp; Mrs. Amit</span></div>
+          </div>
+        </a>
+
+        <a href="#" class="game-card" data-url="https://ag-chess.netlify.app/" data-name="Chess" data-tag="Strategy">
+          <div class="game-preview"><img src="thumbnails/chess.jpg" alt="Chess"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
+          <div class="game-info"><span class="game-name">Chess</span><span class="game-tag">Strategy</span></div>
+          <div class="game-credit">
+            <div class="kid-avatar-initial">A</div>
+            <div class="kid-meta"><span class="kid-name">Agilan, 10</span><span class="kid-when">Delhi</span><span class="kid-parents">Parents: Ashok &amp; Uma</span></div>
+          </div>
+        </a>
+
+        <a href="#" class="game-card" data-url="https://snakerealms.netlify.app/" data-name="Snake Realms" data-tag="Classic">
+          <div class="game-preview"><img src="thumbnails/snake-realms.jpg" alt="Snake Realms"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
+          <div class="game-info"><span class="game-name">Snake Realms</span><span class="game-tag">Classic</span></div>
+          <div class="game-credit">
+            <div class="kid-avatar-initial">A</div>
+            <div class="kid-meta"><span class="kid-name">Amala, 7</span><span class="kid-when">Delhi</span></div>
+          </div>
+        </a>
+
+        <a href="#" class="game-card" data-url="https://a-dino-mutation.netlify.app/" data-name="Dino Mutation" data-tag="Adventure">
+          <div class="game-preview"><img src="thumbnails/dino-mutation.jpg" alt="Dino Mutation"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
+          <div class="game-info"><span class="game-name">Dino Mutation</span><span class="game-tag">Adventure</span></div>
+          <div class="game-credit">
+            <div class="kid-avatar-initial">A</div>
+            <div class="kid-meta"><span class="kid-name">Agilan, 10</span><span class="kid-when">Delhi</span><span class="kid-parents">Parents: Ashok &amp; Uma</span></div>
+          </div>
+        </a>
+
+        <a href="#" class="game-card" data-url="https://atharv-climbing-ball.netlify.app/" data-name="Climbing Ball" data-tag="Arcade">
+          <div class="game-preview"><img src="thumbnails/climbing-ball.jpg" alt="Climbing Ball"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
+          <div class="game-info"><span class="game-name">Climbing Ball</span><span class="game-tag">Arcade</span></div>
+          <div class="game-credit">
+            <div class="kid-avatar-initial">A</div>
+            <div class="kid-meta"><span class="kid-name">Atharv, 9</span><span class="kid-when">Bangalore</span><span class="kid-parents">Parents: Amit &amp; Mrs. Amit</span></div>
+          </div>
+        </a>
+
+        <a href="#" class="game-card" data-url="https://agilan-spacefight.netlify.app/" data-name="Space Fight" data-tag="Shooter">
+          <div class="game-preview"><img src="thumbnails/space-fight.jpg" alt="Space Fight"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
+          <div class="game-info"><span class="game-name">Space Fight</span><span class="game-tag">Shooter</span></div>
+          <div class="game-credit">
+            <div class="kid-avatar-initial">A</div>
+            <div class="kid-meta"><span class="kid-name">Agilan, 10</span><span class="kid-when">Delhi</span><span class="kid-parents">Parents: Ashok &amp; Uma</span></div>
+          </div>
+        </a>
+
+        <a href="#" class="game-card" data-url="https://agilan-neon-challenge.netlify.app/" data-name="Neon Challenge" data-tag="Arcade">
+          <div class="game-preview"><img src="thumbnails/neon-challenge.jpg" alt="Neon Challenge"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
+          <div class="game-info"><span class="game-name">Neon Challenge</span><span class="game-tag">Arcade</span></div>
+          <div class="game-credit">
+            <div class="kid-avatar-initial">A</div>
+            <div class="kid-meta"><span class="kid-name">Agilan, 10</span><span class="kid-when">Delhi</span><span class="kid-parents">Parents: Ashok &amp; Uma</span></div>
+          </div>
+        </a>
+
+        <a href="#" class="game-card" data-url="https://dino-world-arena.netlify.app/" data-name="Dino World Arena" data-tag="Arena">
+          <div class="game-preview"><img src="thumbnails/dino-arena.jpg" alt="Dino World Arena"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
+          <div class="game-info"><span class="game-name">Dino World Arena</span><span class="game-tag">Arena</span></div>
+          <div class="game-credit">
+            <div class="kid-avatar-initial">A</div>
+            <div class="kid-meta"><span class="kid-name">Agilan, 10</span><span class="kid-when">Delhi</span><span class="kid-parents">Parents: Ashok &amp; Uma</span></div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WATCH A KID BUILD -->
+  <section id="videos" class="video-section">
+    <div class="container">
+      <div class="section-label">See it for yourself</div>
+      <div class="section-title">See real kids build — and how we teach</div>
+      <p class="video-sub">
+        No edits, no script — just real sessions. Watch a kid build her own game, and see how
+        we teach: asking questions, never touching the keyboard.
+      </p>
+      <div class="video-grid">
+
+        <div class="video-item">
+          <div class="video-head">A kid builds her own game</div>
+          <div class="video-wrap" data-video="25vgWywldpE" data-title="Amala builds and plays her own game">
+            <div class="video-facade" style="background-image:url('https://i.ytimg.com/vi/25vgWywldpE/hqdefault.jpg')">
+              <button class="video-play" aria-label="Play video"></button>
+            </div>
+          </div>
+          <p class="video-caption"><strong>Amala, 7</strong> · Delhi · built with AI as her developer</p>
+        </div>
+
+        <div class="video-item">
+          <div class="video-head">Inside a live session</div>
+          <div class="video-wrap" data-video="OKCiWRdYqow" data-title="Ashok teaching Atharv over Google Meet">
+            <div class="video-facade" style="background-image:url('https://i.ytimg.com/vi/OKCiWRdYqow/hqdefault.jpg')">
+              <button class="video-play" aria-label="Play video"></button>
+            </div>
+          </div>
+          <p class="video-caption"><strong>Ashok teaching Atharv</strong> · live over Google Meet</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT HAPPENS -->
+  <section id="how" class="what">
+    <div class="container">
+      <div class="section-label">How it works</div>
+      <div class="section-title">What happens in a session</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h3>They decide what to build</h3>
+            <p>First question every session: "What do you want to build today?" No syllabus. No assigned projects. If they can imagine it, we build it.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h3>They build it — with AI as their developer</h3>
+            <p>The kid describes what they want. The AI builds it. The kid plays it, finds what's missing, and keeps going. No typing code. Pure creative thinking.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h3>They explain it to you</h3>
+            <p>Last 15 minutes: you join. They walk you through what they built and why. This is non-negotiable — explaining what you made is how you understand what you learned.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h3>They tell us what's next</h3>
+            <p>One question at the end: "What do you want to add next time?" That answer is what brings them back.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE RULE -->
+  <section class="rule">
+    <div class="container">
+      <div class="rule-card">
+        <h2>Our one rule as teachers:<br><span>We never touch the keyboard.</span></h2>
+        <p>We don't give answers. We ask questions. "What do you think is missing?" "What should happen when the player does that?" The kid figures it out — we just help them think.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote-section">
+    <div class="container">
+      <div class="quote-card">
+        <div class="quote-text">"I couldn't believe my son could explain exactly how his cricket game works. He built the whole thing himself. He was so proud."</div>
+        <div class="quote-author">Parent of a 9-year-old, pilot batch</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="for-section">
+    <div class="container">
+      <div class="section-label">Who it's for</div>
+      <div class="section-title">Built for curious kids,<br>not coders</div>
+      <div class="for-grid">
+        <div class="for-card">
+          <div class="icon">🎮</div>
+          <h4>Age 7–16</h4>
+          <p>Old enough to have ideas. Young enough that building something feels like magic.</p>
+        </div>
+        <div class="for-card">
+          <div class="icon">💡</div>
+          <h4>Zero experience needed</h4>
+          <p>No coding background required. If they can describe what they want, they can build it.</p>
+        </div>
+        <div class="for-card">
+          <div class="icon">🏏</div>
+          <h4>Any game they want</h4>
+          <p>Cricket. Shooting. Puzzles. Racing. Their obsession is the starting point.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU'LL NOTICE -->
+  <section style="background: var(--grey); padding: 80px 24px;">
+    <div class="container">
+      <div class="section-label">What changes</div>
+      <div class="section-title">What parents tell us<br>after a few sessions</div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <div style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; margin-top: 8px;"></div>
+          <p style="font-size: 17px; line-height: 1.6;">"He stops giving up when something doesn't work. He just tries a different way."</p>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <div style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; margin-top: 8px;"></div>
+          <p style="font-size: 17px; line-height: 1.6;">"She started explaining her decisions — not just what she built, but why she built it that way."</p>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <div style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; margin-top: 8px;"></div>
+          <p style="font-size: 17px; line-height: 1.6;">"He breaks big problems into smaller ones now. Even outside games — homework, projects, everything."</p>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <div style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; margin-top: 8px;"></div>
+          <p style="font-size: 17px; line-height: 1.6;">"She asks 'what would make this better?' about everything now. Games, drawings, her own ideas."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="team" style="background: var(--grey); padding: 80px 24px;">
+    <div class="container">
+      <div class="section-label">Who we are</div>
+      <div class="section-title">Built by parents.<br>Backed by experience.</div>
+      <p style="font-size: 16px; color: #555; line-height: 1.8; margin-top: -28px; margin-bottom: 48px; max-width: 580px;">
+        This started when Ashok's son built his own Subway Surfer in a single session — and came back the next day asking to build another. We're IIT/IIM alumni who saw something real happen, and decided more kids deserved that experience.
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
+
+        <div class="about-card">
+          <div class="about-avatar" style="background: linear-gradient(135deg, #FF5C00, #ff8c42);">AN</div>
+          <div class="about-info">
+            <div class="about-name">Ashok N</div>
+            <div class="about-creds">
+              <span class="about-badge">NIT Trichy</span>
+              <span class="about-badge">IIM Kozhikode</span>
+            </div>
+            <p class="about-bio">His son built a Subway Surfer clone in his very first session and wouldn't stop talking about it. That moment is why Ariantra exists.</p>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <div class="about-avatar" style="background: linear-gradient(135deg, #0f3460, #16213e);">AK</div>
+          <div class="about-info">
+            <div class="about-name">Amit Kumar</div>
+            <div class="about-creds">
+              <span class="about-badge">IIT Bombay</span>
+              <span class="about-badge">IIM Kozhikode</span>
+            </div>
+            <p class="about-bio">Believes the most important skill a kid can build right now is knowing how to turn an idea into something real. This is the simplest way to do that.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background: var(--white); padding: 80px 24px;">
+    <div class="container">
+      <div class="section-label">Before you book</div>
+      <div class="section-title">Questions parents ask</div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            What does my kid need to get started?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            Just a laptop or desktop and a stable internet connection. No software to install, no accounts to create beforehand. We handle everything in the first session.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            What age group is this for?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            7 to 16 years. Old enough to have their own ideas, young enough that building something still feels like magic. We've seen kids on both ends of that range absolutely thrive.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Does my kid need to know coding?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            No. Zero coding knowledge required. Your kid describes what they want to build and the AI builds it. The skill they're developing is how to think — not how to type code.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            How long is a session and how does it work?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            Sessions are 60–90 minutes, fully online, one-on-one. The first 5 minutes: kid decides what to build. Next 50–60 minutes: they build it with the teacher watching and asking questions. Last 15 minutes: we invite you to join and the kid explains what they made.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Do I need to be present the whole time?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            Just the last 15 minutes. That's when your kid presents what they built. We ask that you're there for that part — it matters more than it sounds.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            What happens after the free session?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            If your kid loves it — and they almost always do — you continue with weekly sessions. We'll share session details and pricing when we talk on WhatsApp. No pressure, no commitment required from the free session.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <div class="cta-section">
+    <h2>First session is <span>free.</span><br>Book it in 2 minutes.</h2>
+    <p>WhatsApp us and we'll find a time that works.</p>
+    <a href="https://wa.me/918800364622?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20first%20session%20for%20my%20kid."
+       class="cta-big" target="_blank">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.557 4.126 1.534 5.857L.057 23.885l6.23-1.635A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.964-1.348l-.356-.212-3.698.97.989-3.607-.233-.37A9.818 9.818 0 1112 21.818z"/>
+      </svg>
+      Book free session on WhatsApp
+    </a>
+    <div class="cta-free-note">No commitment. No credit card. Just a conversation.</div>
+  </div>
+
+  <!-- GAME MODAL -->
+  <div class="game-modal-overlay" id="gameModal">
+    <div class="game-modal" id="gameModalBox">
+      <div class="game-modal-header">
+        <div class="game-modal-title">
+          <span id="gameModalTag">Built by a kid</span>
+          <span id="gameModalName">Game</span>
+        </div>
+        <div class="game-modal-actions">
+          <a id="gameModalLink" href="#" target="_blank" class="game-modal-newtab">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <span>Open in new tab</span>
+          </a>
+          <button class="game-modal-close" id="gameModalClose">✕</button>
+        </div>
+      </div>
+      <div class="game-modal-body">
+        <div class="game-loading" id="gameModalLoading"><div class="game-spinner"></div><span>Loading game…</span></div>
+        <iframe id="gameModalFrame" src="" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="footer-logo">Ariantra<span>.</span></div>
+          <div class="footer-tag">AI Foundry — Game Building for Kids</div>
+          <p class="footer-desc">
+            We help kids aged 7–16 turn their own ideas into real, playable games — with AI as
+            their developer. No coding required, no templates. Just imagination, building, and
+            the pride of making something real. Built in India, for curious young creators everywhere.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:contact@ariantra.com">contact@ariantra.com</a>
+          <a href="https://wa.me/918800364622?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20first%20session%20for%20my%20kid." target="_blank">WhatsApp: +91 88003 64622</a>
+          <p>400-A, 4th Floor, Yusuf Sarai Commercial Complex, Hauz Khas, New Delhi – 110016, India</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="https://ariantra.com" target="_blank">ariantra.com</a>
+          <a href="https://markszen.com" target="_blank">MarksZen (our AI grading platform)</a>
+          <a href="https://www.linkedin.com/company/ariantra/" target="_blank">LinkedIn</a>
+          <a href="https://www.youtube.com/@ariantra-ai" target="_blank">YouTube</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Ariantra AI Foundry Private Limited. Made with curiosity in India.</span>
+        <div class="footer-legal">
+          <span>CIN: U63119DL2026PTC465754</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/918800364622?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20first%20session%20for%20my%20kid."
+     target="_blank" class="wa-float" id="waFloat" aria-label="Book on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.557 4.126 1.534 5.857L.057 23.885l6.23-1.635A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.964-1.348l-.356-.212-3.698.97.989-3.607-.233-.37A9.818 9.818 0 1112 21.818z"/>
+    </svg>
+    <span>Book free session</span>
+  </a>
+
+  <script>
+    const modal = document.getElementById('gameModal');
+    const modalBox = document.getElementById('gameModalBox');
+    const modalFrame = document.getElementById('gameModalFrame');
+    const modalName = document.getElementById('gameModalName');
+    const modalTag = document.getElementById('gameModalTag');
+    const modalLink = document.getElementById('gameModalLink');
+    const modalClose = document.getElementById('gameModalClose');
+    const modalLoading = document.getElementById('gameModalLoading');
+
+    function openModal(url, name, tag) {
+      modalLoading.style.display = 'flex';           // show spinner
+      modalFrame.onload = () => { modalLoading.style.display = 'none'; };
+      modalFrame.src = url;
+      modalName.textContent = name;
+      modalTag.textContent = tag;
+      modalLink.href = url;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      modalFrame.src = '';
+      document.body.style.overflow = '';
+    }
+
+    // ── Analytics helpers ──
+    function trackEvent(name, params) {
+      if (typeof gtag !== 'undefined') gtag('event', name, params);
+      if (typeof clarity !== 'undefined') clarity('set', name, JSON.stringify(params));
+    }
+
+    // Track WhatsApp clicks + open the app directly (skip the "Continue to Chat" page)
+    document.querySelectorAll('a[href*="wa.me"]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        const loc = el.classList.contains('wa-float') ? 'floating'
+                  : el.classList.contains('hero-cta')  ? 'hero'
+                  : el.classList.contains('cta-big')   ? 'bottom'
+                  : 'nav';
+        trackEvent('whatsapp_click', { location: loc });
+
+        const web = el.getAttribute('href');
+        const isMobile = /android|iphone|ipad|ipod/i.test(navigator.userAgent);
+
+        if (isMobile) {
+          // Mobile: open the WhatsApp app directly, fall back to wa.me if not installed
+          e.preventDefault();
+          const app = web
+            .replace('https://wa.me/', 'whatsapp://send?phone=')
+            .replace('?text=', '&text=');
+
+          let opened = false;
+          const onHide = () => { if (document.hidden) { opened = true; } };
+          document.addEventListener('visibilitychange', onHide, { once: true });
+
+          setTimeout(() => {
+            if (!opened) window.location.href = web;   // same-tab nav = never popup-blocked
+            document.removeEventListener('visibilitychange', onHide);
+          }, 1200);
+
+          window.location.href = app;
+        }
+        // Desktop: let the link's default behaviour open wa.me (opens WhatsApp Web/Desktop).
+        // No preventDefault, so the browser opens it normally — no popup blocking.
+      });
+    });
+
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('open');
+      document.querySelectorAll('.faq-q.open').forEach(b => {
+        b.classList.remove('open');
+        b.nextElementSibling.classList.remove('open');
+      });
+      if (!isOpen) {
+        btn.classList.add('open');
+        answer.classList.add('open');
+        trackEvent('faq_opened', { question: btn.textContent.trim().replace('+','').trim() });
+      }
+    }
+
+    // Show floating button after scrolling past hero
+    const waFloat = document.getElementById('waFloat');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) waFloat.classList.add('visible');
+      else waFloat.classList.remove('visible');
+    });
+
+    // ── Inline play: load a live, playable game inside the card ──
+    function stopInline(card) {
+      card.classList.remove('playing');
+      const live = card.querySelector('.game-frame-live');
+      if (live) live.remove();
+      const ctrls = card.querySelector('.game-controls');
+      if (ctrls) ctrls.remove();
+    }
+
+    function playInline(card) {
+      // only one inline game running at a time
+      document.querySelectorAll('.game-card.playing').forEach(c => { if (c !== card) stopInline(c); });
+      if (card.classList.contains('playing')) return;
+
+      const preview = card.querySelector('.game-preview');
+      const url = card.dataset.url;
+      card.classList.add('playing');
+
+      // loading spinner until the game iframe finishes loading
+      const loading = document.createElement('div');
+      loading.className = 'game-loading';
+      loading.innerHTML = '<div class="game-spinner"></div><span>Loading game…</span>';
+      preview.appendChild(loading);
+
+      const frame = document.createElement('iframe');
+      frame.className = 'game-frame-live';
+      frame.src = url;
+      frame.allow = 'autoplay; fullscreen; gamepad; accelerometer; gyroscope';
+      frame.setAttribute('allowfullscreen', '');
+      frame.addEventListener('load', () => { if (loading.parentNode) loading.remove(); });
+      preview.appendChild(frame);
+
+      const ctrls = document.createElement('div');
+      ctrls.className = 'game-controls';
+
+      const expand = document.createElement('button');
+      expand.className = 'game-ctrl-btn labeled';
+      expand.title = 'Play full screen';
+      expand.innerHTML = '⤢ Expand';
+      expand.addEventListener('click', ev => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        stopInline(card); // avoid two copies running at once
+        openModal(url, card.dataset.name, card.dataset.tag);
+        trackEvent('game_expanded', { game_name: card.dataset.name });
+      });
+
+      const close = document.createElement('button');
+      close.className = 'game-ctrl-btn';
+      close.title = 'Close';
+      close.innerHTML = '✕';
+      close.addEventListener('click', ev => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        stopInline(card);
+      });
+
+      ctrls.appendChild(expand);
+      ctrls.appendChild(close);
+      preview.appendChild(ctrls);
+
+      // brief hint so people know they can go full screen
+      const hint = document.createElement('div');
+      hint.className = 'game-hint';
+      hint.innerHTML = 'Tap <b>⤢ Expand</b> to play full screen';
+      preview.appendChild(hint);
+      setTimeout(() => { hint.classList.add('hide'); }, 4000);
+      setTimeout(() => { if (hint.parentNode) hint.remove(); }, 4600);
+
+      trackEvent('game_played_inline', { game_name: card.dataset.name, game_tag: card.dataset.tag });
+    }
+
+    const isMobile = () => window.matchMedia('(max-width: 760px)').matches;
+
+    document.querySelectorAll('.game-card').forEach(card => {
+      card.addEventListener('click', e => {
+        e.preventDefault();
+        if (isMobile()) {
+          // Mobile: go straight to the full-screen modal player
+          openModal(card.dataset.url, card.dataset.name, card.dataset.tag);
+          trackEvent('game_opened', { game_name: card.dataset.name, game_tag: card.dataset.tag });
+          return;
+        }
+        if (card.classList.contains('playing')) return; // controls handle their own clicks
+        playInline(card);
+      });
+    });
+
+    // Lite YouTube: load the player only when the thumbnail is tapped (fast + reliable on mobile)
+    document.querySelectorAll('.video-wrap[data-video]').forEach(wrap => {
+      wrap.addEventListener('click', () => {
+        const id = wrap.dataset.video;
+        const title = wrap.dataset.title || 'Video';
+        wrap.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id +
+          '?autoplay=1&rel=0&playsinline=1" title="' + title +
+          '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+        trackEvent('video_played', { video_id: id });
+      });
+    });
+
+    document.getElementById('gameModalLink').addEventListener('click', () => {
+      trackEvent('game_fullscreen', { game_name: modalName.textContent });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', e => {
+      if (!modalBox.contains(e.target)) closeModal();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+</body>
+</html>

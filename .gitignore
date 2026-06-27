@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# macOS
+.DS_Store
+
+# Editor / tooling
+.claude/
+.vscode/
+.idea/
+
+# Local dev artifacts (screenshots, scratch)
+above-fold-preview.png
+ariantra-site.png
+nav-preview.png
+*.log
+
+# Old deploy snapshot (optional — remove this line if you want it tracked)
+ariantra-deploy/
