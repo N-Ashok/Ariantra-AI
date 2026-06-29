@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms & Conditions — Ariantra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0f172a;
+      --white: #FFFFFF;
+      --accent: #FF5C00;
+      --grey: #F4F4F4;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-decoration: none;
+    }
+    .logo-text {
+      font-size: 17px;
+      font-weight: 300;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      color: var(--black);
+      line-height: 1;
+    }
+    .logo-divider {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 5px;
+      margin: 4px 0 3px;
+    }
+    .logo-line {
+      flex: 1;
+      height: 1px;
+      background: var(--black);
+      opacity: 0.3;
+    }
+    .logo-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .logo-sub {
+      font-size: 7px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      line-height: 1;
+    }
+    .back-btn {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .back-btn:hover { color: var(--accent); }
+
+    /* HERO */
+    .page-hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 64px 24px 48px;
+      text-align: center;
+    }
+    .page-hero .label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .page-hero h1 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      margin-bottom: 12px;
+    }
+    .page-hero p {
+      font-size: 15px;
+      color: #94a3b8;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* CONTENT */
+    .content {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--grey);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+    .toc-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .toc ol {
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .toc ol li a {
+      font-size: 14px;
+      color: var(--black);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .toc ol li a:hover { color: var(--accent); }
+
+    /* SECTIONS */
+    .section {
+      margin-bottom: 48px;
+      scroll-margin-top: 80px;
+    }
+    .section-num {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--black);
+    }
+    .section p {
+      font-size: 15px;
+      color: #334155;
+      margin-bottom: 14px;
+      line-height: 1.8;
+    }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul, .section ol {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .section li {
+      font-size: 15px;
+      color: #334155;
+      line-height: 1.7;
+    }
+
+    /* HIGHLIGHT BOX */
+    .highlight {
+      background: #fff7ed;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 18px 20px;
+      margin: 20px 0;
+    }
+    .highlight p {
+      margin: 0;
+      font-size: 14px;
+      color: #92400e;
+      font-weight: 500;
+    }
+
+    /* IP BOX — special styling for the important clause */
+    .ip-box {
+      background: var(--black);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 28px;
+      margin: 20px 0;
+    }
+    .ip-box h3 {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .ip-box ul {
+      padding-left: 18px;
+      gap: 10px;
+      margin: 0;
+    }
+    .ip-box li {
+      font-size: 14px;
+      color: #cbd5e1;
+      line-height: 1.7;
+    }
+
+    /* DIVIDER */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 28px 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 8px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .page-hero { padding: 48px 20px 36px; }
+      .content { padding: 40px 20px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="logo">
+      <span class="logo-text">Ariantra</span>
+      <span class="logo-divider">
+        <span class="logo-line"></span>
+        <span class="logo-dot"></span>
+        <span class="logo-line"></span>
+      </span>
+      <span class="logo-sub">AI Foundry</span>
+    </a>
+    <a href="index.html" class="back-btn">
+      ← Back to home
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="label">Legal</div>
+    <h1>Terms & Conditions</h1>
+    <p>Please read these carefully before booking a session or using the Ariantra platform.</p>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <p style="font-size:13px; color: var(--text-muted); margin-bottom: 32px;">
+      Last updated: June 2025 &nbsp;·&nbsp; Ariantra AI Foundry Private Limited
+    </p>
+
+    <!-- TOC -->
+    <div class="toc">
+      <div class="toc-title">Contents</div>
+      <ol>
+        <li><a href="#who-we-are">Who We Are</a></li>
+        <li><a href="#the-service">The Service</a></li>
+        <li><a href="#eligibility">Eligibility & Parental Consent</a></li>
+        <li><a href="#sessions">Sessions, Booking & Payment</a></li>
+        <li><a href="#cancellation">Cancellation & Refunds</a></li>
+        <li><a href="#ip">Game Ownership & Intellectual Property</a></li>
+        <li><a href="#content">Content Standards</a></li>
+        <li><a href="#privacy">Privacy & Data</a></li>
+        <li><a href="#liability">Limitation of Liability</a></li>
+        <li><a href="#changes">Changes to These Terms</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ol>
+    </div>
+
+    <!-- 1. WHO WE ARE -->
+    <div class="section" id="who-we-are">
+      <div class="section-num">01</div>
+      <h2>Who We Are</h2>
+      <p>Ariantra is a product of <strong>Ariantra AI Foundry Private Limited</strong>, a company incorporated in India. We run a game-building bootcamp for kids aged 8–14, where children build their own games using AI — guided by trained mentors.</p>
+      <p>When these terms say "Ariantra", "we", "us", or "our", we mean Ariantra AI Foundry Private Limited.</p>
+    </div>
+
+    <!-- 2. THE SERVICE -->
+    <div class="section" id="the-service">
+      <div class="section-num">02</div>
+      <h2>The Service</h2>
+      <p>Ariantra provides:</p>
+      <ul>
+        <li>One-on-one online mentored sessions where kids build games using AI</li>
+        <li>A platform to save, view, and share games built during sessions</li>
+        <li>Session notes and progress summaries shared with parents after each session</li>
+      </ul>
+      <p>Sessions are conducted online via video call. The first session is free with no commitment required.</p>
+    </div>
+
+    <!-- 3. ELIGIBILITY -->
+    <div class="section" id="eligibility">
+      <div class="section-num">03</div>
+      <h2>Eligibility & Parental Consent</h2>
+      <p>Our service is designed for children aged <strong>8 to 14 years</strong>. By booking a session, the parent or legal guardian confirms that:</p>
+      <ul>
+        <li>They are the parent or legal guardian of the child enrolling</li>
+        <li>They consent to the child participating in Ariantra sessions</li>
+        <li>They have read and agree to these terms on behalf of the child</li>
+        <li>They will ensure the child has a suitable environment and device for sessions</li>
+      </ul>
+      <div class="highlight">
+        <p>Children cannot enter into contracts. All agreements under these terms are between Ariantra and the parent or legal guardian.</p>
+      </div>
+    </div>
+
+    <!-- 4. SESSIONS -->
+    <div class="section" id="sessions">
+      <div class="section-num">04</div>
+      <h2>Sessions, Booking & Payment</h2>
+      <p>Sessions are booked via WhatsApp or the Ariantra platform. Each session is:</p>
+      <ul>
+        <li>45–60 minutes, conducted fully online, one-on-one</li>
+        <li>Scheduled at a mutually agreed time between the mentor and parent</li>
+        <li>Paid in advance unless otherwise agreed in writing</li>
+      </ul>
+      <p>Payment is accepted via Razorpay (UPI, cards, net banking). Session fees are communicated at the time of booking and may be revised with 30 days notice to existing students.</p>
+      <p>The first session is free of charge. No payment information is required to book the free session.</p>
+    </div>
+
+    <!-- 5. CANCELLATION -->
+    <div class="section" id="cancellation">
+      <div class="section-num">05</div>
+      <h2>Cancellation & Refunds</h2>
+
+      <p><strong>If Ariantra cancels a session:</strong> A full credit or cash refund will be provided within 14 days. No penalty to the parent.</p>
+
+      <p><strong>If a parent cancels a session:</strong> Credit or rescheduling is offered at Ariantra's discretion, depending on notice given. We aim to be fair and handle each situation individually.</p>
+
+      <p><strong>If a parent discontinues with unused prepaid sessions:</strong> A refund of the unused amount will be processed within 30 days of a written request, less an administrative fee of 10%.</p>
+
+      <div class="highlight">
+        <p>For any refund or cancellation queries, contact us via WhatsApp or email. Written requests can be sent via WhatsApp message or email to hello@ariantra.com.</p>
+      </div>
+    </div>
+
+    <!-- 6. IP -->
+    <div class="section" id="ip">
+      <div class="section-num">06</div>
+      <h2>Game Ownership & Intellectual Property</h2>
+      <p>This section is important. Please read it carefully.</p>
+
+      <div class="ip-box">
+        <h3>Ownership Summary</h3>
+        <ul>
+          <li><strong>All games and code</strong> built on the Ariantra platform are owned by Ariantra AI Foundry Private Limited</li>
+          <li>Ariantra may <strong>publish, modify, distribute, and monetize</strong> any game built during sessions — on any platform, in any form, at its sole discretion — without requiring further consent from the parent or child</li>
+          <li>Game concepts and ideas may be <strong>shared with and developed by other Ariantra students</strong> as part of the learning programme</li>
+          <li>Ariantra operates a <strong>Creator Revenue Programme</strong> — when a game generates commercial revenue, Ariantra will proactively share a percentage with the student's parent. The applicable percentage is determined by Ariantra and communicated at the time of first payment</li>
+        </ul>
+      </div>
+
+      <p>By enrolling in Ariantra sessions, the parent acknowledges and agrees that all games built during sessions are the intellectual property of Ariantra AI Foundry Private Limited.</p>
+      <p>Ariantra is committed to approaching revenue sharing fairly and transparently when it becomes relevant.</p>
+    </div>
+
+    <!-- 7. CONTENT -->
+    <div class="section" id="content">
+      <div class="section-num">07</div>
+      <h2>Content Standards</h2>
+      <p>All games built on the Ariantra platform must be appropriate for children aged 8–14. The following are not permitted:</p>
+      <ul>
+        <li>Violence, gore, or graphic content</li>
+        <li>Content that discriminates by religion, caste, gender, or ethnicity</li>
+        <li>Adult or sexually explicit content of any kind</li>
+        <li>Content that demeans, bullies, or targets any individual</li>
+        <li>Games designed to collect personal information from players</li>
+      </ul>
+      <p>Mentors are responsible for ensuring sessions stay within these standards. Ariantra reserves the right to remove any content that violates these guidelines without prior notice.</p>
+    </div>
+
+    <!-- 8. PRIVACY -->
+    <div class="section" id="privacy">
+      <div class="section-num">08</div>
+      <h2>Privacy & Data</h2>
+      <p>We collect and use personal data — including the parent's contact details, the child's first name and age, session records, and games built during sessions — strictly to deliver our service.</p>
+      <p>Our data practices, your rights under India's Digital Personal Data Protection Act 2023, the third-party services we use, and how long we retain data are all set out in full in our <a href="privacy.html" style="color: #FF5C00;">Privacy Policy</a>.</p>
+      <p>By enrolling your child, you confirm that you have read and accepted the Privacy Policy.</p>
+    </div>
+
+    <!-- 9. LIABILITY -->
+    <div class="section" id="liability">
+      <div class="section-num">09</div>
+      <h2>Limitation of Liability</h2>
+      <p>Ariantra provides sessions and a platform on an "as is" basis. We do not guarantee specific learning outcomes — results depend on the child's engagement, consistency, and effort.</p>
+      <p>Ariantra is not liable for:</p>
+      <ul>
+        <li>Technical issues on the parent's or child's device or internet connection</li>
+        <li>Third-party services used during sessions (Google Meet, Gemini, etc.)</li>
+        <li>Games that are shared externally by the parent or child</li>
+        <li>Any indirect or consequential losses arising from use of our service</li>
+      </ul>
+      <p>Our total liability in any situation is limited to the amount paid for sessions in the preceding 30 days.</p>
+    </div>
+
+    <!-- 10. CHANGES -->
+    <div class="section" id="changes">
+      <div class="section-num">10</div>
+      <h2>Changes to These Terms</h2>
+      <p>We may update these terms from time to time. When we do:</p>
+      <ul>
+        <li>The updated date at the top of this page will change</li>
+        <li>For material changes, we will notify enrolled parents via WhatsApp at least 14 days before the change takes effect</li>
+        <li>Continuing to use the service after the effective date constitutes acceptance of the new terms</li>
+      </ul>
+    </div>
+
+    <!-- 11. CONTACT -->
+    <div class="section" id="contact">
+      <div class="section-num">11</div>
+      <h2>Contact Us</h2>
+      <p>For any questions about these terms, data requests, or anything else:</p>
+      <ul>
+        <li><strong>WhatsApp:</strong> <a href="https://wa.me/918800364622" style="color: var(--accent); text-decoration: none;">+91 88003 64622</a></li>
+        <li><strong>Email:</strong> <a href="mailto:hello@ariantra.com" style="color: var(--accent); text-decoration: none;">hello@ariantra.com</a></li>
+        <li><strong>Company:</strong> Ariantra AI Foundry Private Limited, India</li>
+      </ul>
+      <p>We aim to respond to all queries within 2 working days.</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span><strong>Ariantra</strong> — AI Foundry Private Limited</span>
+    <span><a href="index.html">← Back to home</a></span>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Ariantra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0f172a;
+      --white: #FFFFFF;
+      --accent: #FF5C00;
+      --grey: #F4F4F4;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-decoration: none;
+    }
+    .logo-text {
+      font-size: 17px;
+      font-weight: 300;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      color: var(--black);
+      line-height: 1;
+    }
+    .logo-divider {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 5px;
+      margin: 4px 0 3px;
+    }
+    .logo-line {
+      flex: 1;
+      height: 1px;
+      background: var(--black);
+      opacity: 0.3;
+    }
+    .logo-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .logo-sub {
+      font-size: 7px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      line-height: 1;
+    }
+    .back-btn {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .back-btn:hover { color: var(--accent); }
+
+    /* HERO */
+    .page-hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 64px 24px 48px;
+      text-align: center;
+    }
+    .page-hero .label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .page-hero h1 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      margin-bottom: 12px;
+    }
+    .page-hero p {
+      font-size: 15px;
+      color: #94a3b8;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* CONTENT */
+    .content {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--grey);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+    .toc-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .toc ol {
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .toc ol li a {
+      font-size: 14px;
+      color: var(--black);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .toc ol li a:hover { color: var(--accent); }
+
+    /* SECTIONS */
+    .section {
+      margin-bottom: 48px;
+      scroll-margin-top: 80px;
+    }
+    .section-num {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .section h2 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--black);
+    }
+    .section p {
+      font-size: 15px;
+      color: #334155;
+      margin-bottom: 14px;
+      line-height: 1.8;
+    }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul, .section ol {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .section li {
+      font-size: 15px;
+      color: #334155;
+      line-height: 1.7;
+    }
+
+    /* DATA TABLE */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+    .data-table th {
+      background: var(--black);
+      color: var(--white);
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .data-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      color: #334155;
+      vertical-align: top;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:nth-child(even) td { background: #f8fafc; }
+
+    /* HIGHLIGHT */
+    .highlight {
+      background: #fff7ed;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 18px 20px;
+      margin: 20px 0;
+    }
+    .highlight p {
+      margin: 0;
+      font-size: 14px;
+      color: #92400e;
+      font-weight: 500;
+      line-height: 1.7;
+    }
+
+    /* DARK BOX */
+    .dark-box {
+      background: var(--black);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 28px;
+      margin: 20px 0;
+    }
+    .dark-box h3 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .dark-box p {
+      font-size: 14px;
+      color: #cbd5e1;
+      line-height: 1.75;
+      margin-bottom: 10px;
+    }
+    .dark-box p:last-child { margin-bottom: 0; }
+    .dark-box ul {
+      padding-left: 18px;
+      gap: 8px;
+      margin: 0;
+    }
+    .dark-box li {
+      font-size: 14px;
+      color: #cbd5e1;
+      line-height: 1.7;
+    }
+
+    /* THIRD PARTY TABLE */
+    .tp-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+    .tp-table th {
+      background: var(--grey);
+      color: var(--black);
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--border);
+    }
+    .tp-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      color: #334155;
+      vertical-align: top;
+    }
+    .tp-table tr:last-child td { border-bottom: none; }
+
+    /* RIGHTS GRID */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .right-card {
+      background: var(--grey);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .right-card h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+    .right-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* GRIEVANCE BOX */
+    .grievance-box {
+      border: 2px solid var(--black);
+      border-radius: 12px;
+      padding: 28px;
+      margin: 20px 0;
+    }
+    .grievance-box h3 {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .grievance-box p {
+      font-size: 14px;
+      color: #334155;
+      margin-bottom: 8px;
+    }
+    .grievance-box a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 28px 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .page-hero { padding: 48px 20px 36px; }
+      .content { padding: 40px 20px 60px; }
+      .rights-grid { grid-template-columns: 1fr; }
+      .data-table, .tp-table { font-size: 13px; }
+      .data-table th, .data-table td,
+      .tp-table th, .tp-table td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="logo">
+      <span class="logo-text">Ariantra</span>
+      <span class="logo-divider">
+        <span class="logo-line"></span>
+        <span class="logo-dot"></span>
+        <span class="logo-line"></span>
+      </span>
+      <span class="logo-sub">AI Foundry</span>
+    </a>
+    <a href="index.html" class="back-btn">← Back to home</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="label">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p>How we collect, use, and protect your information and your child's information.</p>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <p style="font-size:13px; color: var(--text-muted); margin-bottom: 32px;">
+      Last updated: June 2025 &nbsp;·&nbsp; Ariantra AI Foundry Private Limited
+    </p>
+
+    <!-- TOC -->
+    <div class="toc">
+      <div class="toc-title">Contents</div>
+      <ol>
+        <li><a href="#who">Who We Are</a></li>
+        <li><a href="#collect">What We Collect and Why</a></li>
+        <li><a href="#children">Children's Data</a></li>
+        <li><a href="#third-parties">Third Parties Who Receive Your Data</a></li>
+        <li><a href="#retention">How Long We Keep Data</a></li>
+        <li><a href="#rights">Your Rights</a></li>
+        <li><a href="#transfers">Cross-Border Data Transfers</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#cookies">Cookies & Analytics</a></li>
+        <li><a href="#changes">Changes to This Policy</a></li>
+        <li><a href="#grievance">Grievance Officer & Contact</a></li>
+      </ol>
+    </div>
+
+    <!-- 1. WHO WE ARE -->
+    <div class="section" id="who">
+      <div class="section-num">01</div>
+      <h2>Who We Are</h2>
+      <p><strong>Ariantra AI Foundry Private Limited</strong> is the data controller responsible for your personal data. We run a game-building bootcamp for children aged 8–14, operating online across India.</p>
+      <p>When this policy says "Ariantra", "we", "us", or "our", it means Ariantra AI Foundry Private Limited.</p>
+      <p>This policy applies to all personal data collected through our website, WhatsApp communication, and the Ariantra platform. It should be read alongside our <a href="terms.html" style="color: var(--accent);">Terms & Conditions</a>.</p>
+    </div>
+
+    <!-- 2. WHAT WE COLLECT -->
+    <div class="section" id="collect">
+      <div class="section-num">02</div>
+      <h2>What We Collect and Why</h2>
+      <p>We collect only what we need to deliver our service. Here is every type of data we collect and the specific purpose for each:</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Purpose</th>
+            <th>Legal Basis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Parent's name</strong></td>
+            <td>Identify the account holder, address communications</td>
+            <td>Contract performance</td>
+          </tr>
+          <tr>
+            <td><strong>Parent's phone number</strong></td>
+            <td>Session booking via WhatsApp, notifications</td>
+            <td>Contract performance</td>
+          </tr>
+          <tr>
+            <td><strong>Parent's email address</strong></td>
+            <td>Sending session summaries and receipts</td>
+            <td>Contract performance</td>
+          </tr>
+          <tr>
+            <td><strong>Child's first name</strong></td>
+            <td>Personalising the session experience</td>
+            <td>Parental consent</td>
+          </tr>
+          <tr>
+            <td><strong>Child's age</strong></td>
+            <td>Ensuring the child meets the age requirement (8–14)</td>
+            <td>Parental consent</td>
+          </tr>
+          <tr>
+            <td><strong>Session dates & duration</strong></td>
+            <td>Record-keeping, billing, progress tracking</td>
+            <td>Contract performance</td>
+          </tr>
+          <tr>
+            <td><strong>Mentor session notes</strong></td>
+            <td>Progress summaries shared with parent after each session</td>
+            <td>Contract performance</td>
+          </tr>
+          <tr>
+            <td><strong>Games built during sessions</strong> (HTML files)</td>
+            <td>Platform storage, parent viewing, potential publishing — owned by Ariantra per our T&C</td>
+            <td>Legitimate interest / T&C</td>
+          </tr>
+          <tr>
+            <td><strong>Payment information</strong></td>
+            <td>Processing session payments via Razorpay</td>
+            <td>Contract performance</td>
+          </tr>
+          <tr>
+            <td><strong>Website usage data</strong></td>
+            <td>Understanding how visitors use our site (via Google Analytics and Microsoft Clarity)</td>
+            <td>Legitimate interest</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>We do not collect: full names of children, photographs, school names, home addresses, or any sensitive personal data beyond what is listed above.</p>
+    </div>
+
+    <!-- 3. CHILDREN'S DATA -->
+    <div class="section" id="children">
+      <div class="section-num">03</div>
+      <h2>Children's Data</h2>
+
+      <div class="dark-box">
+        <h3>Important — Please Read</h3>
+        <p>Ariantra's service is designed for children aged 8–14. Under India's Digital Personal Data Protection Act 2023 (DPDP Act), Section 9, processing personal data of a child requires <strong>verifiable parental consent.</strong></p>
+        <p>By enrolling your child and agreeing to these terms, you — as the parent or legal guardian — provide this consent on behalf of your child. We do not collect data from children directly. All data is collected from and through the parent.</p>
+        <p>We do not serve behavioural advertising to children. We do not track children's activity outside of our platform. We do not build profiles on children for any purpose other than delivering the Ariantra service.</p>
+      </div>
+
+      <p>If we become aware that we have collected personal data from a child without verifiable parental consent, we will delete it promptly. To report such a concern, contact our Grievance Officer.</p>
+    </div>
+
+    <!-- 4. THIRD PARTIES -->
+    <div class="section" id="third-parties">
+      <div class="section-num">04</div>
+      <h2>Third Parties Who Receive Your Data</h2>
+      <p>We use a number of trusted third-party services to deliver our product. Each receives limited data only as necessary for its function:</p>
+
+      <table class="tp-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Provider</th>
+            <th>What They Receive</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Gemini API</strong></td>
+            <td>Google</td>
+            <td>Session prompts typed by the child</td>
+            <td>Generating game code during sessions</td>
+          </tr>
+          <tr>
+            <td><strong>Google Analytics</strong></td>
+            <td>Google</td>
+            <td>Anonymised website usage data</td>
+            <td>Understanding site traffic and usage</td>
+          </tr>
+          <tr>
+            <td><strong>Microsoft Clarity</strong></td>
+            <td>Microsoft</td>
+            <td>Anonymised session recordings, heatmaps</td>
+            <td>Improving website experience</td>
+          </tr>
+          <tr>
+            <td><strong>Razorpay</strong></td>
+            <td>Razorpay Software Pvt Ltd</td>
+            <td>Payment details, name, email</td>
+            <td>Processing session payments</td>
+          </tr>
+          <tr>
+            <td><strong>WhatsApp</strong></td>
+            <td>Meta Platforms</td>
+            <td>Phone number, messages exchanged</td>
+            <td>Session booking and communication</td>
+          </tr>
+          <tr>
+            <td><strong>Netlify</strong></td>
+            <td>Netlify Inc.</td>
+            <td>Game HTML files</td>
+            <td>Hosting published games</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>We do not sell personal data to any third party. We do not share personal data with third parties for their own marketing purposes.</p>
+    </div>
+
+    <!-- 5. RETENTION -->
+    <div class="section" id="retention">
+      <div class="section-num">05</div>
+      <h2>How Long We Keep Data</h2>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th>Retention Period</th>
+            <th>Reason</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Parent contact details</td>
+            <td>Duration of enrolment + 1 year</td>
+            <td>Service delivery and support</td>
+          </tr>
+          <tr>
+            <td>Child's name and age</td>
+            <td>Duration of enrolment + 1 year</td>
+            <td>Service delivery</td>
+          </tr>
+          <tr>
+            <td>Session records and mentor notes</td>
+            <td>Duration of enrolment + 2 years</td>
+            <td>Progress history and dispute resolution</td>
+          </tr>
+          <tr>
+            <td>Payment records</td>
+            <td>7 years</td>
+            <td>Legal requirement under Indian tax law</td>
+          </tr>
+          <tr>
+            <td>Games built during sessions</td>
+            <td>Indefinitely</td>
+            <td>Owned by Ariantra per T&C — retained as platform content</td>
+          </tr>
+          <tr>
+            <td>Website analytics</td>
+            <td>26 months (Google Analytics default)</td>
+            <td>Usage trend analysis</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>After the applicable retention period, personal data is deleted or anonymised. Games built during sessions are retained indefinitely as Ariantra's intellectual property, but personal identifiers within those games can be removed on request.</p>
+    </div>
+
+    <!-- 6. RIGHTS -->
+    <div class="section" id="rights">
+      <div class="section-num">06</div>
+      <h2>Your Rights</h2>
+      <p>Under India's Digital Personal Data Protection Act 2023 and the IT (Reasonable Security Practices) Rules 2011, you have the following rights regarding your personal data:</p>
+
+      <div class="rights-grid">
+        <div class="right-card">
+          <h4>Right to Access</h4>
+          <p>Request a summary of what personal data we hold about you and your child.</p>
+        </div>
+        <div class="right-card">
+          <h4>Right to Correct</h4>
+          <p>Request correction of any inaccurate or incomplete personal data.</p>
+        </div>
+        <div class="right-card">
+          <h4>Right to Erase</h4>
+          <p>Request deletion of your personal data. We will action this within 30 days. Note: games built during sessions are Ariantra's IP and are not subject to erasure requests.</p>
+        </div>
+        <div class="right-card">
+          <h4>Right to Withdraw Consent</h4>
+          <p>Withdraw consent for processing your child's data at any time. This will end the service relationship.</p>
+        </div>
+        <div class="right-card">
+          <h4>Right to Grievance Redressal</h4>
+          <p>Lodge a complaint with our Grievance Officer. We will respond within 48 hours and resolve within 30 days.</p>
+        </div>
+        <div class="right-card">
+          <h4>Right to Nominate</h4>
+          <p>Nominate another individual to exercise your rights on your behalf in the event of death or incapacity.</p>
+        </div>
+      </div>
+
+      <p>To exercise any of these rights, contact our Grievance Officer via WhatsApp or email. We will acknowledge your request within 48 hours.</p>
+    </div>
+
+    <!-- 7. TRANSFERS -->
+    <div class="section" id="transfers">
+      <div class="section-num">07</div>
+      <h2>Cross-Border Data Transfers</h2>
+      <p>Some of our third-party service providers process data outside India:</p>
+      <ul>
+        <li><strong>Google</strong> (Gemini API, Analytics) — servers in the United States and globally</li>
+        <li><strong>Microsoft</strong> (Clarity) — servers in the United States</li>
+        <li><strong>Meta</strong> (WhatsApp) — servers in the United States</li>
+        <li><strong>Netlify</strong> — servers in the United States</li>
+      </ul>
+      <p>These transfers are made to providers who maintain appropriate data protection standards. Razorpay processes payments within India and is subject to RBI guidelines.</p>
+      <p>As India's DPDP Act framework for cross-border transfers is notified, we will update this policy accordingly.</p>
+    </div>
+
+    <!-- 8. SECURITY -->
+    <div class="section" id="security">
+      <div class="section-num">08</div>
+      <h2>Security</h2>
+      <p>We take reasonable technical and organisational measures to protect personal data against unauthorised access, loss, or misuse. These include:</p>
+      <ul>
+        <li>HTTPS encryption across all Ariantra web properties</li>
+        <li>Access to personal data limited to Ariantra mentors and administrators on a need-to-know basis</li>
+        <li>Payment data handled entirely by Razorpay — Ariantra does not store card or bank details</li>
+        <li>Session data stored on secured servers with access controls</li>
+      </ul>
+      <p>No system is completely secure. If you believe your data has been compromised, contact our Grievance Officer immediately.</p>
+    </div>
+
+    <!-- 9. COOKIES -->
+    <div class="section" id="cookies">
+      <div class="section-num">09</div>
+      <h2>Cookies & Analytics</h2>
+      <p>Our website uses the following cookies and tracking tools:</p>
+      <ul>
+        <li><strong>Google Analytics</strong> — measures page visits, session duration, and traffic sources. Data is anonymised and aggregated. You can opt out via <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" style="color: var(--accent);">Google's opt-out tool</a>.</li>
+        <li><strong>Microsoft Clarity</strong> — records anonymised session activity and heatmaps to help us improve the site. No personally identifiable information is captured.</li>
+      </ul>
+      <p>We do not use advertising cookies or track users across third-party websites.</p>
+
+      <div class="highlight">
+        <p>Our website does not currently display a cookie consent banner. We will add one as Indian cookie consent regulations are clarified under the DPDP Act framework.</p>
+      </div>
+    </div>
+
+    <!-- 10. CHANGES -->
+    <div class="section" id="changes">
+      <div class="section-num">10</div>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time — particularly as India's DPDP Act rules are notified and come into effect.</p>
+      <ul>
+        <li>The updated date at the top of this page will change when we make updates</li>
+        <li>For material changes affecting how we process children's data, we will notify enrolled parents via WhatsApp at least 14 days in advance</li>
+        <li>Continued use of the service after the effective date constitutes acceptance of the updated policy</li>
+      </ul>
+    </div>
+
+    <!-- 11. GRIEVANCE -->
+    <div class="section" id="grievance">
+      <div class="section-num">11</div>
+      <h2>Grievance Officer & Contact</h2>
+      <p>As required under India's IT (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules 2011, Ariantra has appointed a Grievance Officer to address privacy-related concerns.</p>
+
+      <div class="grievance-box">
+        <h3>Grievance Officer</h3>
+        <p><strong>Name:</strong> Amit Kumar</p>
+        <p><strong>Designation:</strong> Co-Founder, Ariantra AI Foundry Private Limited</p>
+        <p><strong>Email:</strong> <a href="mailto:hello@ariantra.com">hello@ariantra.com</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/918800364622">+91 88003 64622</a></p>
+        <p style="margin-top: 12px; font-size: 13px; color: var(--text-muted);">We will acknowledge your grievance within 48 hours and resolve it within 30 days.</p>
+      </div>
+
+      <p>You also have the right to escalate unresolved complaints to India's Data Protection Board once it is constituted under the DPDP Act 2023.</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span><strong>Ariantra</strong> — AI Foundry Private Limited</span>
+    <span style="display:flex; gap: 20px;">
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="index.html">← Back to home</a>
+    </span>
+  </footer>
+
+</body>
+</html>
