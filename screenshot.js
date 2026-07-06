@@ -3,16 +3,16 @@ const path = require('path');
 const fs = require('fs');
 
 const games = [
-  { name: 'chess',         url: 'https://ag-chess.netlify.app/' },
-  { name: 'subway-surfer', url: 'https://a-subway-surfer.netlify.app/' },
-  { name: 'dino-mutation', url: 'https://a-dino-mutation.netlify.app/' },
-  { name: 'dino-race',     url: 'https://a-dino-race.netlify.app/' },
-  { name: 'space-fight',   url: 'https://agilan-spacefight.netlify.app/' },
-  { name: 'neon-challenge',url: 'https://agilan-neon-challenge.netlify.app/' },
-  { name: 'cricket',       url: 'https://atharvcricket.netlify.app/' },
-  { name: 'aeroplane',     url: 'https://m-aeroplane.netlify.app/' },
-  { name: 'snake-realms',  url: 'https://snakerealms.netlify.app/' },
-  { name: 'dino-arena',    url: 'https://dino-world-arena.netlify.app/' },
+  { name: 'chess',         url: 'https://chess.ariantra.com/' },
+  { name: 'subway-surfer', url: 'https://subway-surfer.ariantra.com/' },
+  { name: 'dino-mutation', url: 'https://dino-mutation.ariantra.com/' },
+  { name: 'dino-race',     url: 'https://dino-race.ariantra.com/' },
+  { name: 'space-fight',   url: 'https://space-fight.ariantra.com/' },
+  { name: 'neon-challenge',url: 'https://neon-challenge.ariantra.com/' },
+  { name: 'cricket',       url: 'https://cricket.ariantra.com/' },
+  { name: 'aeroplane',     url: 'https://aeroplane.ariantra.com/' },
+  { name: 'snake-realms',  url: 'https://snake-realms.ariantra.com/' },
+  { name: 'dino-arena',    url: 'https://dino-world-arena.ariantra.com/' },
 ];
 
 const outDir = path.join(__dirname, 'thumbnails');

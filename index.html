@@ -30,7 +30,7 @@
   <meta name="twitter:image" content="https://ariantra.com/ariantra-site.png">
 
   <!-- ── Favicon ── -->
-  <link rel="icon" href="https://ariantra.com/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="https://api.ariantra.com/brand/ariantra-favicon.svg">
   <link rel="apple-touch-icon" href="https://ariantra.com/apple-touch-icon.png">
 
   <!-- ── Structured data: Organization + Course + FAQ ── -->
@@ -105,7 +105,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://api.ariantra.com/brand/ariantra-brand.v1.css">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -127,20 +126,6 @@
       line-height: 1.6;
     }
 
-    /* ── NAV ── */
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-    }
-    .nav-links .nav-link {
-      text-decoration: none;
-      color: var(--black);
-      font-size: 14px;
-      font-weight: 600;
-      transition: color 0.15s;
-    }
-    .nav-links .nav-link:hover { color: var(--accent); }
     .nav-book {
       background: var(--accent);
       color: #fff;
@@ -155,10 +140,6 @@
     .nav-book:hover { background: #e65300; }
     html { scroll-behavior: smooth; }
     section[id] { scroll-margin-top: 76px; }
-    @media (max-width: 800px) {
-      .nav-links .nav-link { display: none; }   /* keep just the Book button on small screens */
-      .nav-links { gap: 0; }
-    }
     .logo {
       display: flex;
       flex-direction: column;
@@ -222,7 +203,7 @@
     .hero {
       background: var(--black);
       color: var(--white);
-      padding: 100px 24px 100px;
+      padding: 140px 24px 100px;
       text-align: center;
     }
     .hero-tag {
@@ -270,6 +251,48 @@
       transition: opacity 0.2s, transform 0.2s;
     }
     .hero-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+    /* "More games" text link under the games grid — quiet by design. */
+    .arcade-more {
+      margin-top: 40px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .arcade-more-lead {
+      font-size: 14px;
+      color: #6b7280;
+    }
+    .arcade-link {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 8px;
+      color: var(--accent);
+      font-size: 17px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .arcade-link-label {
+      background-image: linear-gradient(currentColor, currentColor);
+      background-repeat: no-repeat;
+      background-position: 0 100%;
+      background-size: 0% 1.5px;
+      transition: background-size 0.25s ease;
+      padding-bottom: 2px;
+    }
+    .arcade-link-arrow {
+      transition: transform 0.25s ease;
+    }
+    .arcade-link:hover .arcade-link-label,
+    .arcade-link:focus-visible .arcade-link-label { background-size: 100% 1.5px; }
+    .arcade-link:hover .arcade-link-arrow,
+    .arcade-link:focus-visible .arcade-link-arrow { transform: translateX(5px); }
+    @media (max-width: 560px) {
+      /* Keep label + arrow on ONE line on phones (a wrapped orphan arrow
+         reads broken) — size down instead. */
+      .arcade-link { font-size: 15px; white-space: nowrap; }
+    }
     .hero-cta svg { flex-shrink: 0; }
     .hero-note {
       margin-top: 16px;
@@ -1244,31 +1267,108 @@
         max-height: 100vh;
       }
     }
+  
+    /* ── Unified classic header (stable across all Ariantra pages) ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #eee;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 26px; }
+    .nav-links .nav-link {
+      text-decoration: none; color: var(--black);
+      font-size: 14px; font-weight: 600; transition: color 0.15s;
+    }
+    .nav-links .nav-link:hover { color: var(--accent); }
+    .nav-links .nav-signin { color: var(--text-muted); }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .nav-book {
+      background: var(--accent); color: #fff; text-decoration: none;
+      padding: 9px 18px; border-radius: 24px; font-size: 14px; font-weight: 700;
+      white-space: nowrap; transition: background 0.15s;
+    }
+    .nav-book:hover { background: #e65300; }
+    .nav-burger {
+      display: none; flex-direction: column; justify-content: center; gap: 4px;
+      width: 40px; height: 40px; padding: 8px;
+      background: none; border: 1px solid #e5e7eb; border-radius: 8px; cursor: pointer;
+    }
+    .nav-burger span { display: block; height: 2px; background: var(--black); border-radius: 2px; transition: transform 0.2s, opacity 0.2s; }
+    .nav-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    @media (max-width: 860px) {
+      .nav-burger { display: flex; }
+      .nav-links {
+        display: none;
+        position: fixed; top: 69px; left: 0; right: 0;
+        flex-direction: column; align-items: flex-start; gap: 0;
+        background: #fff; border-bottom: 1px solid #eee;
+        padding: 8px 0; box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links .nav-link { display: block; width: 100%; padding: 13px 24px; font-size: 15px; }
+      .nav-book { padding: 9px 14px; font-size: 13px; }
+    }
   </style>
+<!-- Mixpanel analytics (privacy-hardened: masked recordings, no input/text
+     capture, no IP stored). Source of truth: Ariantra-Platform
+     src/lib/telemetry/mixpanel-snippet.ts — re-copy if that changes. -->
+<script type="text/javascript">
+(function(e,c){if(!c.__SV){var l,h;window.mixpanel=c;c._i=[];c.init=function(q,r,f){function t(d,a){var g=a.split(".");2==g.length&&(d=d[g[0]],a=g[1]);d[a]=function(){d.push([a].concat(Array.prototype.slice.call(arguments,0)))}}var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";b.people=b.people||[];b.toString=function(d){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);d||(a+=" (stub)");return a};b.people.toString=function(){return b.toString(1)+".people (stub)"};l="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders start_session_recording stop_session_recording people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");for(h=0;h<l.length;h++)t(b,l[h]);var n="set set_once union unset remove delete".split(" ");b.get_group=function(){function d(p){a[p]=function(){b.push([g,[p].concat(Array.prototype.slice.call(arguments,0))])}}for(var a={},g=["get_group"].concat(Array.prototype.slice.call(arguments,0)),m=0;m<n.length;m++)d(n[m]);return a};c._i.push([q,r,f])};c.__SV=1.2;var k=e.createElement("script");k.type="text/javascript";k.async=!0;k.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=e.getElementsByTagName("script")[0];e.parentNode.insertBefore(k,e)}})(document,window.mixpanel||[]);
+mixpanel.init('6c7d47ee4e9c7d1a2634c3ad4d4e8295', {
+  autocapture: {
+    pageview: 'full-url',
+    click: true,
+    input: false,
+    scroll: true,
+    submit: true,
+    capture_text_content: false,
+  },
+  record_sessions_percent: 100,
+  record_mask_text_selector: '*',
+  record_block_selector: 'img, video, iframe',
+  ip: false,
+});
+</script>
 </head>
 <body>
 
   <!-- NAV -->
-<!-- GENERATED by scripts/build-brand-css.mjs — do not edit by hand.
-     Ariantra shared header v1. Requires ariantra-brand.v1.css + Inter font (see
-     deploy/hostinger/landing-snippet.html for the full <head> block). -->
-<header class="ar-nav">
-  <div class="ar-nav-inner">
-    <a href="https://www.ariantra.com" aria-label="Ariantra AI Foundry" class="ar-logo">
-      <span class="ar-logo-word">Ariantra</span>
-      <span class="ar-logo-divider"><span class="ar-logo-line"></span><span class="ar-logo-dot"></span><span class="ar-logo-line"></span></span>
-      <span class="ar-logo-sub">AI Foundry</span>
+  <nav>
+    <a href="#" class="logo">
+      <span class="logo-text">Ariantra</span>
+      <span class="logo-divider">
+        <span class="logo-line"></span>
+        <span class="logo-dot"></span>
+        <span class="logo-line"></span>
+      </span>
+      <span class="logo-sub">AI Foundry</span>
     </a>
-    <nav class="ar-nav-links">
-      <a href="https://www.ariantra.com" class="ar-link on">Home</a>
-      <a href="https://games.ariantra.com" class="ar-link">Games</a>
-      <a href="https://www.ariantra.com/#videos" class="ar-link">Videos</a>
-      <a href="https://kidgemini.ariantra.com" class="ar-link">KidGemini</a>
-      <a href="https://studio.ariantra.com" class="ar-link">Studio</a>
-      <a href="https://wa.me/918800364622?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20first%20session%20for%20my%20kid." target="_blank" rel="noopener" class="ar-cta">Book a free session</a>
-    </nav>
-  </div>
-</header>
+    <div class="nav-links" id="navLinks">
+      <a href="https://games.ariantra.com" class="nav-link">Games</a>
+      <a href="https://kidgemini.ariantra.com" class="nav-link">KidGemini</a>
+      <a href="#how" class="nav-link">How it works</a>
+      <a href="#videos" class="nav-link">Videos</a>
+      <a href="https://studio.ariantra.com" class="nav-link">Studio</a>
+      <a href="https://studio.ariantra.com" class="nav-link nav-signin">Log in</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://wa.me/918800364622?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20first%20session%20for%20my%20kid."
+         target="_blank" rel="noopener" class="nav-book">Book a free session</a>
+      <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
   <!-- HERO -->
   <div class="hero">
@@ -1329,7 +1429,7 @@
       </p>
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;">
 
-        <a href="#" class="game-card" data-url="https://a-subway-surfer.netlify.app/" data-name="Subway Surfer" data-tag="Runner">
+        <a href="#" class="game-card" data-url="https://subway-surfer.ariantra.com/" data-name="Subway Surfer" data-tag="Runner">
           <div class="game-preview"><img src="thumbnails/subway-surfer.jpg" alt="Subway Surfer"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
           <div class="game-info"><span class="game-name">Subway Surfer</span><span class="game-tag">Runner</span></div>
           <div class="game-credit">
@@ -1338,7 +1438,7 @@
           </div>
         </a>
 
-        <a href="#" class="game-card" data-url="https://a-dino-race.netlify.app/" data-name="Dino Race" data-tag="Racing">
+        <a href="#" class="game-card" data-url="https://dino-race.ariantra.com/" data-name="Dino Race" data-tag="Racing">
           <div class="game-preview"><img src="thumbnails/dino-race.jpg" alt="Dino Race"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
           <div class="game-info"><span class="game-name">Dino Race</span><span class="game-tag">Racing</span></div>
           <div class="game-credit">
@@ -1347,7 +1447,7 @@
           </div>
         </a>
 
-        <a href="#" class="game-card" data-url="https://m-aeroplane.netlify.app/" data-name="Aeroplane" data-tag="Action">
+        <a href="#" class="game-card" data-url="https://aeroplane.ariantra.com/" data-name="Aeroplane" data-tag="Action">
           <div class="game-preview"><img src="thumbnails/aeroplane.jpg" alt="Aeroplane"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
           <div class="game-info"><span class="game-name">Aeroplane</span><span class="game-tag">Action</span></div>
           <div class="game-credit">
@@ -1356,16 +1456,16 @@
           </div>
         </a>
 
-        <a href="#" class="game-card" data-url="https://atharvcricket.netlify.app/" data-name="Cricket" data-tag="Sports">
+        <a href="#" class="game-card" data-url="https://cricket.ariantra.com/" data-name="Cricket" data-tag="Sports">
           <div class="game-preview"><img src="thumbnails/cricket.jpg" alt="Cricket"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
           <div class="game-info"><span class="game-name">Cricket</span><span class="game-tag">Sports</span></div>
           <div class="game-credit">
             <div class="kid-avatar-initial">A</div>
-            <div class="kid-meta"><span class="kid-name">Atharv, 9</span><span class="kid-when">Bangalore</span><span class="kid-parents">Parents: Amit &amp; Mrs. Amit</span></div>
+            <div class="kid-meta"><span class="kid-name">Atharv, 9</span><span class="kid-when">Bangalore</span><span class="kid-parents">Parents: Amit &amp; Ashwini</span></div>
           </div>
         </a>
 
-        <a href="#" class="game-card" data-url="https://ag-chess.netlify.app/" data-name="Chess" data-tag="Strategy">
+        <a href="#" class="game-card" data-url="https://chess.ariantra.com/" data-name="Chess" data-tag="Strategy">
           <div class="game-preview"><img src="thumbnails/chess.jpg" alt="Chess"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
           <div class="game-info"><span class="game-name">Chess</span><span class="game-tag">Strategy</span></div>
           <div class="game-credit">
@@ -1374,7 +1474,7 @@
           </div>
         </a>
 
-        <a href="#" class="game-card" data-url="https://snakerealms.netlify.app/" data-name="Snake Realms" data-tag="Classic">
+        <a href="#" class="game-card" data-url="https://snake-realms.ariantra.com/" data-name="Snake Realms" data-tag="Classic">
           <div class="game-preview"><img src="thumbnails/snake-realms.jpg" alt="Snake Realms"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
           <div class="game-info"><span class="game-name">Snake Realms</span><span class="game-tag">Classic</span></div>
           <div class="game-credit">
@@ -1383,7 +1483,7 @@
           </div>
         </a>
 
-        <a href="#" class="game-card" data-url="https://a-dino-mutation.netlify.app/" data-name="Dino Mutation" data-tag="Adventure">
+        <a href="#" class="game-card" data-url="https://dino-mutation.ariantra.com/" data-name="Dino Mutation" data-tag="Adventure">
           <div class="game-preview"><img src="thumbnails/dino-mutation.jpg" alt="Dino Mutation"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
           <div class="game-info"><span class="game-name">Dino Mutation</span><span class="game-tag">Adventure</span></div>
           <div class="game-credit">
@@ -1392,16 +1492,16 @@
           </div>
         </a>
 
-        <a href="#" class="game-card" data-url="https://atharv-climbing-ball.netlify.app/" data-name="Climbing Ball" data-tag="Arcade">
+        <a href="#" class="game-card" data-url="https://climbing-ball.ariantra.com/" data-name="Climbing Ball" data-tag="Arcade">
           <div class="game-preview"><img src="thumbnails/climbing-ball.jpg" alt="Climbing Ball"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
           <div class="game-info"><span class="game-name">Climbing Ball</span><span class="game-tag">Arcade</span></div>
           <div class="game-credit">
             <div class="kid-avatar-initial">A</div>
-            <div class="kid-meta"><span class="kid-name">Atharv, 9</span><span class="kid-when">Bangalore</span><span class="kid-parents">Parents: Amit &amp; Mrs. Amit</span></div>
+            <div class="kid-meta"><span class="kid-name">Atharv, 9</span><span class="kid-when">Bangalore</span><span class="kid-parents">Parents: Amit &amp; Ashwini</span></div>
           </div>
         </a>
 
-        <a href="#" class="game-card" data-url="https://agilan-spacefight.netlify.app/" data-name="Space Fight" data-tag="Shooter">
+        <a href="#" class="game-card" data-url="https://space-fight.ariantra.com/" data-name="Space Fight" data-tag="Shooter">
           <div class="game-preview"><img src="thumbnails/space-fight.jpg" alt="Space Fight"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
           <div class="game-info"><span class="game-name">Space Fight</span><span class="game-tag">Shooter</span></div>
           <div class="game-credit">
@@ -1410,7 +1510,7 @@
           </div>
         </a>
 
-        <a href="#" class="game-card" data-url="https://agilan-neon-challenge.netlify.app/" data-name="Neon Challenge" data-tag="Arcade">
+        <a href="#" class="game-card" data-url="https://neon-challenge.ariantra.com/" data-name="Neon Challenge" data-tag="Arcade">
           <div class="game-preview"><img src="thumbnails/neon-challenge.jpg" alt="Neon Challenge"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
           <div class="game-info"><span class="game-name">Neon Challenge</span><span class="game-tag">Arcade</span></div>
           <div class="game-credit">
@@ -1419,7 +1519,7 @@
           </div>
         </a>
 
-        <a href="#" class="game-card" data-url="https://dino-world-arena.netlify.app/" data-name="Dino World Arena" data-tag="Arena">
+        <a href="#" class="game-card" data-url="https://dino-world-arena.ariantra.com/" data-name="Dino World Arena" data-tag="Arena">
           <div class="game-preview"><img src="thumbnails/dino-arena.jpg" alt="Dino World Arena"><div class="game-overlay"><span class="play-btn">▶ Play</span></div></div>
           <div class="game-info"><span class="game-name">Dino World Arena</span><span class="game-tag">Arena</span></div>
           <div class="game-credit">
@@ -1428,6 +1528,17 @@
           </div>
         </a>
 
+      </div>
+
+      <!-- Full arcade lives at games.ariantra.com — cards above still play inline.
+           Quiet text link (not a button): the section's one CTA is the games
+           themselves; this is the "want more?" path. -->
+      <div class="arcade-more">
+        <span class="arcade-more-lead">There&rsquo;s more where these came from</span>
+        <a class="arcade-link" href="https://games.ariantra.com/" onclick="trackEvent('arcade_opened', { from: 'games_section' })">
+          <span class="arcade-link-label">Browse all games in the Ariantra Arcade</span>
+          <span class="arcade-link-arrow" aria-hidden="true">&rarr;</span>
+        </a>
       </div>
     </div>
   </section>
@@ -1728,48 +1839,49 @@
   </div>
 
   <!-- FOOTER -->
-<!-- GENERATED by scripts/build-brand-css.mjs — do not edit by hand.
-     Ariantra shared footer v1. Requires ariantra-brand.v1.css. -->
-<footer class="ar-footer">
-  <div class="ar-footer-inner">
-    <div class="ar-footer-grid">
-      <div>
-        <div class="ar-footer-logo">Ariantra<span>.</span></div>
-        <div class="ar-footer-tag">AI Foundry — Game Building for Kids</div>
-        <p class="ar-footer-desc">
-          We help kids aged 7–16 turn their own ideas into real, playable games — with AI as
-          their developer. No coding required, no templates. Just imagination, building, and
-          the pride of making something real. Built in India, for curious young creators everywhere.
-        </p>
-        <div class="ar-footer-social">
-          <a href="https://www.youtube.com/@ariantra-ai" target="_blank" rel="noopener">▶ YouTube</a>
-          <a href="https://www.linkedin.com/company/ariantra/" target="_blank" rel="noopener">in LinkedIn</a>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="footer-logo">Ariantra<span>.</span></div>
+          <div class="footer-tag">AI Foundry — Game Building for Kids</div>
+          <p class="footer-desc">
+            We help kids aged 7–16 turn their own ideas into real, playable games — with AI as
+            their developer. No coding required, no templates. Just imagination, building, and
+            the pride of making something real. Built in India, for curious young creators everywhere.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:contact@ariantra.com">contact@ariantra.com</a>
+          <a href="https://wa.me/918800364622?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20first%20session%20for%20my%20kid." target="_blank">WhatsApp: +91 88003 64622</a>
+          <p>400-A, 4th Floor, Yusuf Sarai Commercial Complex, Hauz Khas, New Delhi – 110016, India</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#faq">FAQ</a>
+          <a href="#team">Our team</a>
+          <a href="blog.html">Blog</a>
+          <a href="/">ariantra.com</a>
+          <a href="https://markszen.com" target="_blank">MarksZen (our AI grading platform)</a>
+          <a href="https://www.linkedin.com/company/ariantra/" target="_blank">LinkedIn</a>
+          <a href="https://www.youtube.com/@ariantra-ai" target="_blank">YouTube</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Ariantra AI Foundry Private Limited. Made with curiosity in India.</span>
+        <div class="footer-legal">
+          <span><a href="terms.html">Terms &amp; Conditions</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a></span>
+          <span>CIN: U63119DL2026PTC465754</span>
         </div>
       </div>
-      <div class="ar-footer-col">
-        <h4>Explore</h4>
-        <a href="https://games.ariantra.com">All games</a>
-        <a href="https://www.ariantra.com/#videos">Videos</a>
-        <a href="https://kidgemini.ariantra.com">KidGemini</a>
-        <a href="https://studio.ariantra.com">Creator Studio</a>
-      </div>
-      <div class="ar-footer-col">
-        <h4>Contact</h4>
-        <a href="mailto:contact@ariantra.com">contact@ariantra.com</a>
-        <a href="https://wa.me/918800364622?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20first%20session%20for%20my%20kid." target="_blank" rel="noopener">WhatsApp: +91 88003 64622</a>
-        <p>400-A, 4th Floor, Yusuf Sarai Commercial Complex, Hauz Khas, New Delhi – 110016, India</p>
-      </div>
     </div>
-    <div class="ar-footer-bottom">
-      <span>© 2026 Ariantra AI Foundry Private Limited. Made with curiosity in India.</span>
-      <span>
-        <a href="https://www.ariantra.com/terms.html">Terms &amp; Conditions</a> &nbsp;·&nbsp;
-        <a href="https://www.ariantra.com/privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
-        CIN: U63119DL2026PTC465754
-      </span>
-    </div>
-  </div>
-</footer>
+  </footer>
 
   <!-- FLOATING WHATSAPP -->
   <a href="https://wa.me/918800364622?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20first%20session%20for%20my%20kid."
@@ -2065,6 +2177,21 @@
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeModal();
     });
+  </script>
+  <script>
+    (function () {
+      var burger = document.getElementById('navBurger');
+      var links = document.getElementById('navLinks');
+      if (!burger || !links) return;
+      burger.addEventListener('click', function () {
+        var open = links.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+      links.addEventListener('click', function (e) {
+        if (e.target.closest('a')) { links.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); }
+      });
+    })();
   </script>
 </body>
 </html>
