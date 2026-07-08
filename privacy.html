@@ -565,7 +565,7 @@ mixpanel.init('6c7d47ee4e9c7d1a2634c3ad4d4e8295', {
           </tr>
           <tr>
             <td><strong>Website usage data</strong></td>
-            <td>Understanding how visitors use our site (via Google Analytics and Microsoft Clarity)</td>
+            <td>Understanding how visitors use our site and games (via Google Analytics, Microsoft Clarity and Mixpanel)</td>
             <td>Legitimate interest</td>
           </tr>
         </tbody>
@@ -624,6 +624,12 @@ mixpanel.init('6c7d47ee4e9c7d1a2634c3ad4d4e8295', {
             <td>Improving website experience</td>
           </tr>
           <tr>
+            <td><strong>Mixpanel</strong></td>
+            <td>Mixpanel Inc.</td>
+            <td>Anonymised usage events across ariantra.com sites and published game pages: pages visited, clicks, game plays and play duration, city-level location. No typed text, no names/emails, raw IPs not stored; session recordings (site pages only, never game pages) have all text masked</td>
+            <td>Understanding how visitors use our sites and games</td>
+          </tr>
+          <tr>
             <td><strong>Razorpay</strong></td>
             <td>Razorpay Software Pvt Ltd</td>
             <td>Payment details, name, email</td>
@@ -640,6 +646,12 @@ mixpanel.init('6c7d47ee4e9c7d1a2634c3ad4d4e8295', {
             <td>Netlify Inc.</td>
             <td>Game HTML files</td>
             <td>Hosting published games</td>
+          </tr>
+          <tr>
+            <td><strong>Amazon Web Services</strong></td>
+            <td>Amazon</td>
+            <td>Game HTML files</td>
+            <td>Hosting published games ({slug}.ariantra.com)</td>
           </tr>
         </tbody>
       </table>
@@ -688,7 +700,7 @@ mixpanel.init('6c7d47ee4e9c7d1a2634c3ad4d4e8295', {
           </tr>
           <tr>
             <td>Website analytics</td>
-            <td>26 months (Google Analytics default)</td>
+            <td>26 months (Google Analytics default); Mixpanel events up to 5 years</td>
             <td>Usage trend analysis</td>
           </tr>
         </tbody>
@@ -770,6 +782,7 @@ mixpanel.init('6c7d47ee4e9c7d1a2634c3ad4d4e8295', {
       <ul>
         <li><strong>Google Analytics</strong> — measures page visits, session duration, and traffic sources. Data is anonymised and aggregated. You can opt out via <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" style="color: var(--accent);">Google's opt-out tool</a>.</li>
         <li><strong>Microsoft Clarity</strong> — records anonymised session activity and heatmaps to help us improve the site. No personally identifiable information is captured.</li>
+        <li><strong>Mixpanel</strong> — measures anonymised usage across all ariantra.com pages and published game pages (pages visited, clicks, game plays and how long games are played). Typed text is never captured, no names or emails are sent, and raw IP addresses are not stored. On site pages (never on game pages) it also records sessions with ALL text masked and media/embedded games blocked.</li>
       </ul>
       <p>We do not use advertising cookies or track users across third-party websites.</p>
 
