@@ -1296,6 +1296,7 @@
       white-space: nowrap; transition: background 0.15s;
     }
     .nav-book:hover { background: #e65300; }
+    .nav-account-icon { display: none; align-items: center; gap: 4px; }
     .nav-burger {
       display: none; flex-direction: column; justify-content: center; gap: 4px;
       width: 40px; height: 40px; padding: 8px;
@@ -1306,18 +1307,47 @@
     .nav-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
     .nav-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
     @media (max-width: 860px) {
-      .nav-burger { display: flex; }
-      .nav-links {
-        display: none;
-        position: fixed; top: 69px; left: 0; right: 0;
-        flex-direction: column; align-items: flex-start; gap: 0;
-        background: #fff; border-bottom: 1px solid #eee;
-        padding: 8px 0; box-shadow: 0 12px 24px rgba(0,0,0,0.08);
-      }
-      .nav-links.open { display: flex; }
-      .nav-links .nav-link { display: block; width: 100%; padding: 13px 24px; font-size: 15px; }
+      /* App-like mobile nav (2026-07-08): the bottom tab bar (.nav-tabbar
+         below) replaces the burger/dropdown as primary nav on mobile —
+         desktop keeps the classic top menu untouched. Mirrors the same
+         pattern in Ariantra-Platform's brand kit (.ar-tabbar). */
+      .nav-burger { display: none; }
+      .nav-links { display: none; }
       .nav-book { padding: 9px 14px; font-size: 13px; }
+      .nav-account-icon { display: inline-flex; }
+      .nav-signin-label { display: none; }
     }
+
+    /* ── Bottom tab bar (mobile "app" nav, 2026-07-08) ─────────────────── */
+    .nav-tabbar { display: none; }
+    @media (max-width: 860px) {
+      .nav-tabbar {
+        display: flex;
+        position: fixed;
+        /* top: auto is load-bearing — the bare `nav { top: 0; }` tag
+           selector above (the header) also matches this <nav>, and without
+           overriding it here, top:0 + bottom:0 together stretch this bar to
+           cover the full viewport as an opaque overlay (2026-07-08 bug). */
+        top: auto; bottom: 0; left: 0; right: 0;
+        height: auto;
+        z-index: 100;
+        background: rgba(255,255,255,0.98);
+        border-top: 1px solid #eee;
+        box-shadow: 0 -4px 16px rgba(16,24,40,0.08);
+        padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+      }
+      body { padding-bottom: calc(56px + env(safe-area-inset-bottom)); }
+    }
+    .nav-tab {
+      flex: 1;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 2px; padding: 6px 2px;
+      color: var(--text-muted); text-decoration: none;
+      font-size: 10.5px; font-weight: 600; border-radius: 8px;
+      transition: color 0.15s;
+    }
+    .nav-tab-icon { font-size: 20px; line-height: 1; }
+    .nav-tab.on { color: var(--accent); }
   </style>
 <!-- Mixpanel analytics (privacy-hardened: masked recordings, no input/text
      capture, no IP stored). Source of truth: Ariantra-Platform
@@ -1364,10 +1394,27 @@ mixpanel.init('6c7d47ee4e9c7d1a2634c3ad4d4e8295', {
     <div class="nav-right">
       <a href="https://wa.me/918800364622?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20first%20session%20for%20my%20kid."
          target="_blank" rel="noopener" class="nav-book">Book a free session</a>
+      <!-- Mobile-only: account collapses to an icon-only tap target — the
+           bottom tab bar carries primary nav on mobile, so no hamburger is
+           needed there. Hidden on desktop (see .nav-account-icon CSS) since
+           the text "Log in" link above already covers that slot there. -->
+      <a href="https://studio.ariantra.com" class="nav-link nav-account-icon" aria-label="Log in">
+        <span aria-hidden="true">👤</span><span class="nav-signin-label">Log in</span>
+      </a>
       <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
+  </nav>
+
+  <!-- Mobile bottom tab bar (2026-07-08 app-like nav) — hidden ≥861px by
+       .nav-tabbar CSS; mirrors Ariantra-Platform's .ar-tabbar pattern. -->
+  <nav class="nav-tabbar" aria-label="Primary">
+    <a href="#" class="nav-tab on"><span class="nav-tab-icon" aria-hidden="true">🏠</span>Home</a>
+    <a href="https://games.ariantra.com" class="nav-tab"><span class="nav-tab-icon" aria-hidden="true">🎮</span>Games</a>
+    <a href="https://kidgemini.ariantra.com" class="nav-tab"><span class="nav-tab-icon" aria-hidden="true">💬</span>KidGemini</a>
+    <a href="https://studio.ariantra.com" class="nav-tab"><span class="nav-tab-icon" aria-hidden="true">🛠️</span>Studio</a>
+    <a href="#videos" class="nav-tab"><span class="nav-tab-icon" aria-hidden="true">▶️</span>Videos</a>
   </nav>
 
   <!-- HERO -->
