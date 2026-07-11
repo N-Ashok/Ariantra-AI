@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- ── SEO: primary ── -->
-  <title>AI for Kids | Game Development Classes — Build Games with AI | Ariantra</title>
-  <meta name="description" content="Ariantra is an AI for kids class where children build their first game in 45 minutes — no coding. Online game development classes that teach kids to make games through AI. Book a free first session.">
-  <meta name="keywords" content="ai for kids, game development for kids, games developing, build games with AI, game through AI, kids coding classes, kids game design classes, AI classes for kids, online game making for children">
+  <title>AI Skills for Kids | Creativity & Problem-Solving Through Game Building | Ariantra</title>
+  <meta name="description" content="Ariantra teaches kids the three skills that matter most — creativity, problem-solving and building with AI — through the thing they love: making their own games with KidGemini and launching them live on the internet. Book a free first session.">
+  <meta name="keywords" content="ai skills for kids, ai for kids, creativity classes for kids, problem solving for kids, prompt engineering for kids, game development for kids, build games with AI, AI classes for kids, KidGemini, online game making for children">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="author" content="Ariantra">
   <link rel="canonical" href="https://ariantra.com/">
@@ -16,8 +16,8 @@
   <!-- ── Open Graph (WhatsApp / Facebook / LinkedIn) ── -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Ariantra">
-  <meta property="og:title" content="AI for Kids — Build Your First Game in 45 Minutes | Ariantra">
-  <meta property="og:description" content="Online AI game-development classes for kids. Your child builds a real game through AI — no coding, no tutorials. Book a free first session.">
+  <meta property="og:title" content="AI Skills for Kids — Creativity & Problem-Solving Through Game Building | Ariantra">
+  <meta property="og:description" content="Your kid learns creativity, problem-solving and real AI skills by building their own game with KidGemini — and launching it live on the internet. Book a free first session.">
   <meta property="og:url" content="https://ariantra.com/">
   <meta property="og:image" content="https://ariantra.com/ariantra-site.png">
   <meta property="og:image:alt" content="Kids building games with AI at Ariantra">
@@ -25,8 +25,8 @@
 
   <!-- ── Twitter / X card ── -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI for Kids — Build Your First Game in 45 Minutes | Ariantra">
-  <meta name="twitter:description" content="Online AI game-development classes for kids. Your child builds a real game through AI — no coding. Book a free first session.">
+  <meta name="twitter:title" content="AI Skills for Kids — Creativity & Problem-Solving Through Game Building | Ariantra">
+  <meta name="twitter:description" content="Kids learn creativity, problem-solving and AI skills by building their own games with KidGemini — and launching them live. Book a free first session.">
   <meta name="twitter:image" content="https://ariantra.com/ariantra-site.png">
 
   <!-- ── Favicon ── -->
@@ -44,14 +44,15 @@
         "name": "Ariantra",
         "url": "https://ariantra.com/",
         "logo": "https://ariantra.com/ariantra-site.png",
-        "description": "AI for kids — online game-development classes where children build real games through AI, with no coding.",
+        "description": "Ariantra teaches kids creativity, problem-solving and AI skills through game building — children prompt KidGemini to build real games and launch them live on the internet, with no coding.",
         "email": "contact@ariantra.com",
         "sameAs": []
       },
       {
         "@type": "Course",
-        "name": "AI Game Development for Kids",
-        "description": "Kids build their first game in 45 minutes using AI — no coding, no tutorials. They decide what to build, build it with AI, and explain it back to a parent.",
+        "name": "AI Skills for Kids — Through Game Building",
+        "description": "Kids build creativity, problem-solving and AI skills by making their own games: they prompt KidGemini to create a first game, refine it with prompts, iterate new features, test it, and launch it live on the internet with Studio.",
+        "teaches": ["Creativity", "Problem solving", "AI skills", "Prompting"],
         "provider": { "@id": "https://ariantra.com/#org" },
         "educationalLevel": "Beginner",
         "audience": { "@type": "EducationalAudience", "educationalRole": "Children" },
@@ -59,7 +60,30 @@
           "@type": "CourseInstance",
           "courseMode": "Online",
           "courseWorkload": "PT45M"
-        }
+        },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Explorer — self-paced (1 year)",
+            "price": "1200",
+            "priceCurrency": "INR",
+            "description": "Full KidGemini access for a year; kids build and publish games on the platform, with fair-use limits on AI usage and number of games."
+          },
+          {
+            "@type": "Offer",
+            "name": "Assisted Starter — 4 live classes",
+            "price": "3990",
+            "priceCurrency": "INR",
+            "description": "4 live one-on-one classes plus unlimited game creation and publishing on the platform for 1 year."
+          },
+          {
+            "@type": "Offer",
+            "name": "Assisted Pro — 8 live classes",
+            "price": "10000",
+            "priceCurrency": "INR",
+            "description": "8 live one-on-one classes, unlimited game creation and publishing for 1 year, and a very high AI usage allowance."
+          }
+        ]
       },
       {
         "@type": "FAQPage",
@@ -422,8 +446,124 @@
       margin-bottom: 48px;
     }
 
+    /* ── HERO SKILL CHIPS (ties hero promise to the skills section) ── */
+    .hero-skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 28px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-skill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: #eee;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 24px;
+      backdrop-filter: blur(4px);
+    }
+
+    /* ── SKILLS (the three things a kid actually builds) ── */
+    .skills-section { background: var(--grey); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+    .skill-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 28px 24px;
+      border-top: 4px solid var(--accent);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .skill-card .icon { font-size: 30px; margin-bottom: 14px; }
+    .skill-card h4 {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 8px;
+    }
+    .skill-card > p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+    .skill-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .skill-card li {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.5;
+      padding-left: 18px;
+      position: relative;
+    }
+    .skill-card li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 7px;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
     /* ── WHAT HAPPENS ── */
     .what { background: var(--grey); }
+    /* Skill chips on each how-it-works step — tie steps back to the
+       skills section. */
+    .step-skills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .step-skill {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    /* Product-name pill inside step copy (KidGemini / Studio) */
+    .step-product {
+      font-weight: 700;
+      color: var(--black);
+      background: var(--accent-light);
+      padding: 1px 7px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    /* Step 6 (launch) is the payoff — highlight the whole row */
+    .step-launch {
+      background: var(--white);
+      border: 2px solid var(--accent);
+      border-radius: 16px;
+      padding: 28px 24px;
+      border-bottom: 2px solid var(--accent) !important;
+      margin-top: 8px;
+    }
+    /* Parent-explain ritual: closing note under the 6 steps */
+    .steps-note {
+      margin-top: 28px;
+      font-size: 15px;
+      color: #444;
+      line-height: 1.7;
+      background: var(--white);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      padding: 18px 22px;
+    }
+    .steps-note strong { color: var(--black); }
     .steps { display: flex; flex-direction: column; gap: 0; }
     .step {
       display: grid;
@@ -541,6 +681,64 @@
       color: #666;
       line-height: 1.6;
     }
+
+    /* ── PRICING ── */
+    .pricing-section { background: var(--accent-light); }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      align-items: stretch;
+    }
+    .price-card {
+      background: var(--white);
+      border: 2px solid #eee;
+      border-radius: 18px;
+      padding: 30px 26px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .price-card.featured { border-color: var(--accent); box-shadow: 0 10px 30px rgba(255,92,0,0.14); }
+    .price-badge {
+      position: absolute;
+      top: -13px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .price-plan { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
+    .price-amount { font-size: 38px; font-weight: 800; letter-spacing: -1px; line-height: 1; }
+    .price-amount span { font-size: 14px; font-weight: 600; color: var(--text-muted); letter-spacing: 0; }
+    .price-desc { font-size: 13.5px; color: #666; line-height: 1.6; margin: 12px 0 18px; }
+    .price-feats { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .price-feats li { font-size: 14px; color: #444; line-height: 1.5; padding-left: 24px; position: relative; }
+    .price-feats li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 800; }
+    .price-feats li.lim { color: #888; }
+    .price-feats li.lim::before { content: '·'; color: #aaa; }
+    .price-cta {
+      margin-top: auto;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 13px 18px;
+      border-radius: 10px;
+      background: var(--black);
+      color: var(--white);
+      transition: opacity 0.2s;
+    }
+    .price-cta:hover { opacity: 0.85; }
+    .price-card.featured .price-cta { background: var(--accent); }
+    .pricing-note { margin-top: 22px; font-size: 13px; color: #777; text-align: center; line-height: 1.6; }
 
     /* ── FINAL CTA ── */
     .cta-section {
@@ -1384,16 +1582,17 @@ mixpanel.init('6c7d47ee4e9c7d1a2634c3ad4d4e8295', {
       <span class="logo-sub">AI Foundry</span>
     </a>
     <div class="nav-links" id="navLinks">
+      <a href="#skills" class="nav-link">Skills</a>
       <a href="https://games.ariantra.com" class="nav-link">Games</a>
       <a href="https://kidgemini.ariantra.com" class="nav-link">KidGemini</a>
       <a href="#how" class="nav-link">How it works</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
       <a href="#videos" class="nav-link">Videos</a>
       <a href="https://studio.ariantra.com" class="nav-link">Studio</a>
       <a href="https://studio.ariantra.com" class="nav-link nav-signin">Log in</a>
     </div>
     <div class="nav-right">
-      <a href="https://wa.me/918800364622?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20first%20session%20for%20my%20kid."
-         target="_blank" rel="noopener" class="nav-book">Book a free session</a>
+      <a href="https://kidgemini.ariantra.com" class="nav-book">Create your first game</a>
       <!-- Mobile-only: account collapses to an icon-only tap target — the
            bottom tab bar carries primary nav on mobile, so no hamburger is
            needed there. Hidden on desktop (see .nav-account-icon CSS) since
@@ -1436,27 +1635,25 @@ mixpanel.init('6c7d47ee4e9c7d1a2634c3ad4d4e8295', {
     </div>
     <div class="hero-overlay"></div>
 
-    <div class="hero-tag">Game Building for Kids</div>
-    <h1>Your kid will build their <em>first game</em> in 45 minutes.</h1>
-    <p>No coding. No tutorials. Just their idea — and an AI that builds it with them.</p>
+    <div class="hero-tag">The AI Skills Platform for Kids · Ages 7–16</div>
+    <h1>Creativity. Problem-solving. And the skill of the decade — <em>building with AI</em>.</h1>
+    <p>Your kid learns all three by building their own game with KidGemini — and launching it live on the internet.</p>
     <div class="hero-actions">
-      <a href="https://wa.me/918800364622?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20first%20session%20for%20my%20kid."
-         class="hero-cta cta-locked" data-requires="consentHero" target="_blank">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.557 4.126 1.534 5.857L.057 23.885l6.23-1.635A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.964-1.348l-.356-.212-3.698.97.989-3.607-.233-.37A9.818 9.818 0 1112 21.818z"/>
-        </svg>
-        Book a free first session
+      <a href="https://kidgemini.ariantra.com" class="hero-cta"
+         onclick="trackEvent('kidgemini_click', { location: 'hero' })">
+        <span aria-hidden="true">🎮</span> Create your first game
       </a>
-      <button type="button" class="hero-watch" data-video="25vgWywldpE" data-title="Amala builds and plays her own game">
-        <span class="pin"></span> Watch a real session
-      </button>
+      <a href="tel:+917204404452" class="hero-watch"
+         onclick="trackEvent('call_click', { location: 'hero' })">
+        <span aria-hidden="true">📞</span> Questions? Click &amp; speak to us
+      </a>
     </div>
-    <label class="consent">
-      <input type="checkbox" id="consentHero" checked>
-      <span>By booking you agree to Ariantra AI's <a href="terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a> and <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
-    </label>
-    <div class="hero-note">Free · No commitment · Takes 2 minutes to book</div>
+    <div class="hero-skills" aria-label="Skills your kid builds">
+      <span class="hero-skill">🎨 Creativity</span>
+      <span class="hero-skill">🧩 Problem Solving</span>
+      <span class="hero-skill">🤖 AI Skills</span>
+    </div>
+    <div class="hero-note">Free to start · No card · A real person picks up</div>
   </div>
 
   <!-- Fullscreen "watch with sound" player (hero) -->
@@ -1466,13 +1663,58 @@ mixpanel.init('6c7d47ee4e9c7d1a2634c3ad4d4e8295', {
     </div>
   </div>
 
+  <!-- SKILLS — the actual product -->
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <div class="section-label">What they actually learn</div>
+      <div class="section-title">Games are the fun part.<br>These skills are the point.</div>
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <div class="icon">🎨</div>
+          <h4>Creativity</h4>
+          <p>Their idea, their world, their rules. Every game starts as pure imagination — and ends as something real you can play.</p>
+          <ul>
+            <li>Inventing characters, worlds and game rules</li>
+            <li>Asking "what would make this more fun?"</li>
+            <li>Turning an idea in their head into something real</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="icon">🧩</div>
+          <h4>Problem Solving</h4>
+          <p>Games break. That's the best part. Kids learn to find what's wrong, break it into small pieces, and fix one thing at a time.</p>
+          <ul>
+            <li>Spotting bugs by playing their own game</li>
+            <li>Breaking big problems into small ones</li>
+            <li>Trying another way instead of giving up</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="icon">🤖</div>
+          <h4>AI Skills</h4>
+          <p>The number-one skill of the next decade: getting an AI to build what's in your head. Your kid directs the AI like a developer.</p>
+          <ul>
+            <li>Writing clear, specific prompts</li>
+            <li>Refining when the AI gets it wrong</li>
+            <li>Knowing what to ask for, step by step</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- GAMES KIDS BUILT -->
   <section id="games" style="background: var(--white); padding: 80px 24px;">
     <div class="container">
-      <div class="section-label">Real proof</div>
-      <div class="section-title">Games our kids actually built</div>
+      <div class="section-label">Skills, made visible</div>
+      <div class="section-title">Every game here is proof of a skill</div>
       <p style="color: #555; font-size: 16px; margin-top: -28px; margin-bottom: 40px; line-height: 1.7;">
-        Not demos. Not templates. These are real games — built by kids aged 7 to 12 in their first few sessions.
+        Not demos. Not templates. Each of these is a kid's own idea — prompted into existence, debugged, and shipped.
+        Creativity, problem-solving and AI skills you can actually play.
       </p>
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;">
 
@@ -1594,10 +1836,10 @@ mixpanel.init('6c7d47ee4e9c7d1a2634c3ad4d4e8295', {
   <section id="videos" class="video-section">
     <div class="container">
       <div class="section-label">See it for yourself</div>
-      <div class="section-title">See real kids build — and how we teach</div>
+      <div class="section-title">Watch the skills in action</div>
       <p class="video-sub">
-        No edits, no script — just real sessions. Watch a kid build her own game, and see how
-        we teach: asking questions, never touching the keyboard.
+        No edits, no script — just real sessions. Watch a kid imagine, prompt, test and fix her own
+        game, and see how we teach: asking questions, never touching the keyboard.
       </p>
       <div class="video-grid">
 
@@ -1629,35 +1871,85 @@ mixpanel.init('6c7d47ee4e9c7d1a2634c3ad4d4e8295', {
   <section id="how" class="what">
     <div class="container">
       <div class="section-label">How it works</div>
-      <div class="section-title">What happens in a session</div>
+      <div class="section-title">From "I have an idea"<br>to a game live on the internet</div>
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
           <div class="step-body">
-            <h3>They decide what to build</h3>
-            <p>First question every session: "What do you want to build today?" No syllabus. No assigned projects. If they can imagine it, we build it.</p>
+            <h3>They open KidGemini</h3>
+            <p>Our kid-safe AI, built for young game-makers. No setup, no code editor — just a place where <span class="step-product">KidGemini</span> is their developer and they're the boss.</p>
+            <div class="step-skills"><span class="step-skill">🤖 AI skills</span></div>
           </div>
         </div>
         <div class="step">
           <div class="step-num">2</div>
           <div class="step-body">
-            <h3>They build it — with AI as their developer</h3>
-            <p>The kid describes what they want. The AI builds it. The kid plays it, finds what's missing, and keeps going. No typing code. Pure creative thinking.</p>
+            <h3>They prompt their first game</h3>
+            <p>They describe the game in their head — "a dino race where lava falls from the sky" — and a playable first version appears in minutes.</p>
+            <div class="step-skills"><span class="step-skill">🎨 Creativity</span><span class="step-skill">🤖 AI skills</span></div>
           </div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
           <div class="step-body">
-            <h3>They explain it to you</h3>
-            <p>Last 15 minutes: you join. They walk you through what they built and why. This is non-negotiable — explaining what you made is how you understand what you learned.</p>
+            <h3>They change it with prompts</h3>
+            <p>Colours, speed, characters, rules — nothing is fixed. They learn that a clear, specific ask gets exactly what they imagined.</p>
+            <div class="step-skills"><span class="step-skill">🤖 AI skills</span></div>
           </div>
         </div>
         <div class="step">
           <div class="step-num">4</div>
           <div class="step-body">
-            <h3>They tell us what's next</h3>
-            <p>One question at the end: "What do you want to add next time?" That answer is what brings them back.</p>
+            <h3>They iterate with new features</h3>
+            <p>Levels, scores, power-ups, bosses. Every session the game grows — and so does their sense of "what should this become next?"</p>
+            <div class="step-skills"><span class="step-skill">🎨 Creativity</span><span class="step-skill">🧩 Problem solving</span></div>
           </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <h3>They test it like a pro</h3>
+            <p>Play it. Find what breaks. Describe the fix. This loop — spot the problem, isolate it, fix one thing at a time — is the skill that transfers everywhere.</p>
+            <div class="step-skills"><span class="step-skill">🧩 Problem solving</span></div>
+          </div>
+        </div>
+        <div class="step step-launch">
+          <div class="step-num">6</div>
+          <div class="step-body">
+            <h3>They launch it — live on the internet</h3>
+            <p>Straight from <span class="step-product">KidGemini</span>, their game is published with <span class="step-product">Studio</span> to a real ariantra.com link. Friends and family can actually play it. That moment — "my game is on the internet" — is the one they never forget.</p>
+            <div class="step-skills"><span class="step-skill">🎨 Creativity</span><span class="step-skill">🧩 Problem solving</span><span class="step-skill">🤖 AI skills</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="steps-note">
+        <strong>And at the end of every session, your kid explains what they built — to you.</strong>
+        Explaining it is how the skills stick. It's the part parents tell us they're proudest of.
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU'LL NOTICE — evidence the skills transfer beyond games -->
+  <section style="background: var(--white); padding: 80px 24px;">
+    <div class="container">
+      <div class="section-label">What changes</div>
+      <div class="section-title">What parents tell us<br>after a few sessions</div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <div style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; margin-top: 8px;"></div>
+          <p style="font-size: 17px; line-height: 1.6;">"He stops giving up when something doesn't work. He just tries a different way."</p>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <div style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; margin-top: 8px;"></div>
+          <p style="font-size: 17px; line-height: 1.6;">"She started explaining her decisions — not just what she built, but why she built it that way."</p>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <div style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; margin-top: 8px;"></div>
+          <p style="font-size: 17px; line-height: 1.6;">"He breaks big problems into smaller ones now. Even outside games — homework, projects, everything."</p>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <div style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; margin-top: 8px;"></div>
+          <p style="font-size: 17px; line-height: 1.6;">"She asks 'what would make this better?' about everything now. Games, drawings, her own ideas."</p>
         </div>
       </div>
     </div>
@@ -1702,35 +1994,74 @@ mixpanel.init('6c7d47ee4e9c7d1a2634c3ad4d4e8295', {
         <div class="for-card">
           <div class="icon">🏏</div>
           <h4>Any game they want</h4>
-          <p>Cricket. Shooting. Puzzles. Racing. Their obsession is the starting point.</p>
+          <p>Cricket. Shooting. Puzzles. Racing. Their obsession is the starting point — and every game trains the same three skills.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHAT YOU'LL NOTICE -->
-  <section style="background: var(--grey); padding: 80px 24px;">
-    <div class="container">
-      <div class="section-label">What changes</div>
-      <div class="section-title">What parents tell us<br>after a few sessions</div>
-      <div style="display: flex; flex-direction: column; gap: 16px;">
-        <div style="display: flex; align-items: flex-start; gap: 16px;">
-          <div style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; margin-top: 8px;"></div>
-          <p style="font-size: 17px; line-height: 1.6;">"He stops giving up when something doesn't work. He just tries a different way."</p>
+  <!-- PRICING -->
+  <section id="pricing" class="pricing-section">
+    <div class="container" style="max-width: 1000px;">
+      <div class="section-label">Pricing</div>
+      <div class="section-title">Start free. Grow at your pace.</div>
+
+      <div class="pricing-grid">
+
+        <div class="price-card">
+          <div class="price-plan">Explorer</div>
+          <div class="price-amount">₹1,200 <span>/ year</span></div>
+          <p class="price-desc">For kids who want to build on their own, at their own pace.</p>
+          <ul class="price-feats">
+            <li>Full access to KidGemini</li>
+            <li>Build and publish games on the platform</li>
+            <li class="lim">Fair-use limit on AI usage</li>
+            <li class="lim">Limited number of games on the platform</li>
+          </ul>
+          <a class="price-cta"
+             href="https://kidgemini.ariantra.com/upgrade?plan=explorer"
+             onclick="trackEvent('plan_selected', { plan: 'explorer' })">Buy Explorer — ₹1,200</a>
         </div>
-        <div style="display: flex; align-items: flex-start; gap: 16px;">
-          <div style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; margin-top: 8px;"></div>
-          <p style="font-size: 17px; line-height: 1.6;">"She started explaining her decisions — not just what she built, but why she built it that way."</p>
+
+        <div class="price-card">
+          <div class="price-plan">Assisted Starter</div>
+          <div class="price-amount">₹3,990</div>
+          <p class="price-desc">4 live one-on-one classes with a teacher — plus a full year of building.</p>
+          <ul class="price-feats">
+            <li>4 live 1-on-1 classes</li>
+            <li>Unlimited game creation on the platform</li>
+            <li>Unlimited game publishing for 1 year</li>
+            <li>Full access to KidGemini</li>
+          </ul>
+          <a class="price-cta"
+             href="https://kidgemini.ariantra.com/upgrade?plan=assisted4"
+             onclick="trackEvent('plan_selected', { plan: 'assisted4' })">Buy Starter — ₹3,990</a>
         </div>
-        <div style="display: flex; align-items: flex-start; gap: 16px;">
-          <div style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; margin-top: 8px;"></div>
-          <p style="font-size: 17px; line-height: 1.6;">"He breaks big problems into smaller ones now. Even outside games — homework, projects, everything."</p>
+
+        <div class="price-card featured">
+          <div class="price-badge">Most popular</div>
+          <div class="price-plan">Assisted Pro</div>
+          <div class="price-amount">₹10,000</div>
+          <p class="price-desc">8 live one-on-one classes — the full journey from first prompt to launched games.</p>
+          <ul class="price-feats">
+            <li>8 live 1-on-1 classes</li>
+            <li>Unlimited game creation on the platform</li>
+            <li>Unlimited game publishing for 1 year</li>
+            <li>Very high AI usage allowance</li>
+          </ul>
+          <a class="price-cta"
+             href="https://kidgemini.ariantra.com/upgrade?plan=assisted8"
+             onclick="trackEvent('plan_selected', { plan: 'assisted8' })">Buy Pro — ₹10,000</a>
         </div>
-        <div style="display: flex; align-items: flex-start; gap: 16px;">
-          <div style="width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; margin-top: 8px;"></div>
-          <p style="font-size: 17px; line-height: 1.6;">"She asks 'what would make this better?' about everything now. Games, drawings, her own ideas."</p>
-        </div>
+
       </div>
+
+      <p class="pricing-note">
+        Secure payment by Razorpay (UPI, cards, netbanking) — you'll sign in to your kid's Ariantra
+        account and checkout opens right away. Every kid starts with a
+        <strong> free first session</strong> — no commitment, no card. Prefer to talk first?
+        <a href="https://wa.me/917204404452?text=Hi%2C%20I%20have%20a%20question%20about%20Ariantra%20plans." target="_blank" rel="noopener" style="color: var(--accent); font-weight: 600;">WhatsApp us</a>.
+      </p>
     </div>
   </section>
 
@@ -1845,21 +2176,19 @@ mixpanel.init('6c7d47ee4e9c7d1a2634c3ad4d4e8295', {
 
   <!-- FINAL CTA -->
   <div class="cta-section">
-    <h2>First session is <span>free.</span><br>Book it in 2 minutes.</h2>
-    <p>WhatsApp us and we'll find a time that works.</p>
-    <a href="https://wa.me/918800364622?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20first%20session%20for%20my%20kid."
-       class="cta-big cta-locked" data-requires="consentBottom" target="_blank">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.557 4.126 1.534 5.857L.057 23.885l6.23-1.635A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.964-1.348l-.356-.212-3.698.97.989-3.607-.233-.37A9.818 9.818 0 1112 21.818z"/>
-      </svg>
-      Book free session on WhatsApp
-    </a>
-    <label class="consent" style="justify-content:center;">
-      <input type="checkbox" id="consentBottom" checked>
-      <span>By booking you agree to Ariantra AI's <a href="terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a> and <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
-    </label>
-    <div class="cta-free-note">No commitment. No credit card. Just a conversation.</div>
+    <h2>Their first game is <span>one prompt away.</span></h2>
+    <p>Create it free on KidGemini — or talk to us first if you have any questions.</p>
+    <div class="hero-actions">
+      <a href="https://kidgemini.ariantra.com" class="cta-big"
+         onclick="trackEvent('kidgemini_click', { location: 'bottom' })">
+        <span aria-hidden="true">🎮</span> Create your first game
+      </a>
+      <a href="tel:+917204404452" class="hero-watch"
+         onclick="trackEvent('call_click', { location: 'bottom' })">
+        <span aria-hidden="true">📞</span> Click &amp; speak to us
+      </a>
+    </div>
+    <div class="cta-free-note">Free to start. No credit card. A real person answers your call.</div>
   </div>
 
   <!-- GAME MODAL -->
@@ -1903,7 +2232,8 @@ mixpanel.init('6c7d47ee4e9c7d1a2634c3ad4d4e8295', {
         <div class="footer-col">
           <h4>Contact</h4>
           <a href="mailto:contact@ariantra.com">contact@ariantra.com</a>
-          <a href="https://wa.me/918800364622?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20first%20session%20for%20my%20kid." target="_blank">WhatsApp: +91 88003 64622</a>
+          <a href="tel:+917204404452">Call us: +91 72044 04452</a>
+          <a href="https://wa.me/917204404452?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20first%20session%20for%20my%20kid." target="_blank">WhatsApp: +91 72044 04452</a>
           <p>400-A, 4th Floor, Yusuf Sarai Commercial Complex, Hauz Khas, New Delhi – 110016, India</p>
         </div>
 
@@ -1931,7 +2261,7 @@ mixpanel.init('6c7d47ee4e9c7d1a2634c3ad4d4e8295', {
   </footer>
 
   <!-- FLOATING WHATSAPP -->
-  <a href="https://wa.me/918800364622?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20first%20session%20for%20my%20kid."
+  <a href="https://wa.me/917204404452?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20first%20session%20for%20my%20kid."
      target="_blank" class="wa-float" id="waFloat" aria-label="Book on WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>

@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Landing-site sitemap (static pages on ariantra.com only).
+     Game subdomains are covered separately: games.ariantra.com/sitemap.xml is a
+     dynamic sitemap-INDEX listing every published game's own per-subdomain
+     sitemap (Ariantra-Platform src/app/sitemap.xml/route.ts). Submit both in
+     Google Search Console under the ariantra.com Domain property. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ariantra.com/</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ariantra.com/blog.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ariantra.com/how-kids-build-games-with-ai.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ariantra.com/terms.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://ariantra.com/privacy.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
