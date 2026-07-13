@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://ariantra.com/sitemap.xml
+Sitemap: https://games.ariantra.com/sitemap.xml
