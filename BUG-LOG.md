@@ -7,6 +7,86 @@ entry ships with the fix.** Newest first.
 
 ---
 
+### 2026-07-14 — `check-links.sh` was blind to the exact regression it exists to prevent
+
+- **Symptom:** none visible yet — caught by a full-repo review, not a live
+  incident. But the gate has been silently non-functional since it was written
+  on 2026-07-03.
+- **Root cause — positional-regex class:** the external-stylesheet check
+  (`<link[^>]*stylesheet[^>]*https?://`) required the word "stylesheet" to
+  appear *before* the URL inside the tag. Every real `<link>` in this repo —
+  including the Google Fonts link this script's own comment calls "exempt" —
+  is written `href="https://..." rel="stylesheet"`, URL first. That ordering
+  never matched, so the check silently never ran. Reproduced directly: a
+  synthetic tag copying the 2026-07-03 `api.ariantra.com/brand/...css`
+  incident's exact shape slipped straight past the old regex.
+- **Fix (class level):** replaced the single positional regex with an
+  order-independent AND-chain — extract every `<link ...>` tag, then require
+  it to contain `rel="stylesheet"` **and** `https?://` **and not**
+  `fonts.googleapis`, regardless of attribute order.
+- **Prevention:** re-verified against the live repo (`bash scripts/check-links.sh`
+  still prints "clean" — no false positive on the legitimate Google Fonts
+  link) and against a reproduction of the original incident's link shape
+  (now correctly caught). Anyone touching this script again should add a
+  fixture-based check rather than trusting a single hand-run repro.
+
+### 2026-07-14 — Full-repo review: 13 correctness/accessibility/SEO fixes across index.html, privacy.html, terms.html
+
+- **Mixpanel never received a custom event.** `trackEvent()` only called
+  `gtag()`/`clarity()`; `mixpanel.track()` was never wired up despite
+  `mixpanel.init()` running on every page load. Fixed by adding the missing
+  call — every `plan_selected`/`whatsapp_click`/etc. event now reaches all
+  three analytics destinations.
+- **WhatsApp deep link silently failed on iPad.** The mobile-vs-desktop check
+  (`/android|iphone|ipad|ipod/i.test(navigator.userAgent)`) misses iPadOS 13+
+  Safari, which reports as desktop "MacIntel" with no "ipad" token. Fixed by
+  adding the standard `navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1`
+  fallback that distinguishes a touch iPad from an actual Mac.
+- **Two of three WhatsApp entry points were mistagged in analytics** — the
+  location ternary keyed off CSS classes (`hero-cta`/`cta-big`) that no wa.me
+  link actually carried, so pricing and footer clicks both fell into the
+  default `'nav'` bucket. Replaced with explicit `data-location` attributes on
+  each of the three links (`pricing` / `footer` / `floating`).
+- **Primary CTA buttons failed WCAG AA contrast sitewide** — white text on
+  `--accent` (#FF5C00) computed to ≈3.10:1, below the 4.5:1 minimum for normal
+  text. Fixed by switching CTA text color to the existing `--black` (#0f172a)
+  token wherever it sits on an accent background (nav, hero, step numbers,
+  pricing badge/CTA, final CTA) — reuses an existing token, ≈5.77:1 contrast,
+  no change to the brand accent color itself. Also fixed the same pattern on
+  the unused-but-latent `.nav-btn` rule while sweeping, and on privacy.html's
+  and terms.html's `.nav-book` — same bug, caught by the visual verification
+  pass (computed-style check), missed by the original text-only review
+  because that pass only scanned index.html.
+- **Mobile bottom tab bar's active tab never updated.** `.nav-tab.on` was
+  hardcoded onto "Home" with no JS keeping it in sync. Added an
+  `IntersectionObserver` on `#videos` that toggles the highlighted tab (and
+  `aria-current`) between Home and Videos as that section scrolls in/out —
+  the only two in-page destinations in the tab bar.
+- **privacy.html and terms.html shipped with zero SEO metadata** — no meta
+  description, OpenGraph, canonical, or JSON-LD (index.html had all four).
+  Added a full metadata block to both, matching index.html's pattern.
+- **Design-token drift:** `--text-muted` was `#777` in index.html but
+  `#64748b` in privacy.html/terms.html. Standardized on `#64748b` (still
+  ≥4.5:1 on white) and removed a hardcoded `#777` in `.pricing-note` that
+  duplicated the old value instead of referencing the token. Also moved
+  `.price-feats li.lim`'s `#888` (≈3.55:1, failed AA) onto the same token.
+- **Contact email inconsistency** — index.html used `contact@ariantra.com`;
+  privacy.html/terms.html used `hello@ariantra.com`. Standardized on
+  `contact@ariantra.com` everywhere (owner-confirmed).
+- **Security/accessibility on the game modal:** `#gameModalLink`
+  (`target="_blank"` to a dynamically-set third-party game URL) had no
+  `rel="noopener"`; `#gameModalClose` was an icon-only `✕` button with no
+  accessible name. Both fixed.
+- **Deploy drift:** `ariantra-deploy/` (the directory `check-links.sh` treats
+  as the pre-deploy staging copy) was ~3 days behind root, missing the latest
+  redesign and privacy disclosures. Synced `index.html`, `privacy.html`,
+  `terms.html`, and `sitemap.xml` from root (owner-confirmed); also bumped
+  `sitemap.xml` `lastmod` to today for the three pages actually changed.
+- **Prevention:** all JS changes verified with a syntax check across every
+  inline `<script>` block; every contrast fix re-computed against WCAG's
+  relative-luminance formula rather than eyeballed; `check-links.sh` re-run
+  clean after the sync.
+
 ### 2026-07-03 — Broken live menu + "links lead to the old site" (two bugs, one deploy)
 
 - **Symptom:** (1) ariantra.com's header rendered as unstyled blue links. (2)

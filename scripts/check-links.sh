@@ -6,8 +6,8 @@
 # root-relative (/#faq, /blog.html). An absolute https://ariantra.com/... link
 # navigates to whatever is CURRENTLY DEPLOYED — from a local preview or a
 # staging host that means "the old site". Cross-host links (games./studio./
-# kidgemini.) are exempt; so are metadata URLs (canonical, og:, favicon,
-# JSON-LD), which SHOULD be absolute.
+# ari. — formerly kidgemini., renamed 2026-07-17) are exempt; so are metadata
+# URLs (canonical, og:, favicon, JSON-LD), which SHOULD be absolute.
 #
 # Also blocks any external stylesheet dependency (the api.ariantra.com brand
 # CSS 403 broke the live menu on 2026-07-03 — all CSS must be inline).
@@ -29,11 +29,18 @@ for f in "${PAGES[@]}"; do
     fail=1
   fi
 
-  if grep -qE '<link[^>]*stylesheet[^>]*https?://' "$f"; then
+  # Order-independent: match <link> tags that carry BOTH rel="stylesheet" and
+  # an https?:// URL, regardless of which attribute comes first (href="https://
+  # ..." rel="stylesheet" is how every page in this repo actually writes it —
+  # a positional regex silently never matches that order).
+  ext_css=$(grep -nE '<link[^>]*>' "$f" \
+        | grep -E 'rel="stylesheet"' \
+        | grep -E 'https?://' \
+        | grep -v fonts.googleapis || true)
+  if [ -n "$ext_css" ]; then
     echo "✗ $f — external stylesheet dependency (must be inline):"
-    grep -nE '<link[^>]*stylesheet[^>]*https?://' "$f" | grep -v fonts.googleapis | sed 's/^/    /' || true
-    grep -qE '<link[^>]*stylesheet[^>]*https?://' "$f" && \
-      grep -nE '<link[^>]*stylesheet[^>]*https?://' "$f" | grep -qv fonts.googleapis && fail=1
+    echo "$ext_css" | sed 's/^/    /'
+    fail=1
   fi
 done
 
