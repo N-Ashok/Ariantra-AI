@@ -7,6 +7,44 @@ entry ships with the fix.** Newest first.
 
 ---
 
+### 2026-07-24 — Tech-debt pass: root/deploy drift (inverted), rename closeout, llms.txt, IP disclosure, check-links self-test
+
+- **Root/deploy drift — inverted this time.** `blog.html` and
+  `how-kids-build-games-with-ai.html` existed only in `ariantra-deploy/`
+  while root's `sitemap.xml` already listed them — the same drift class as
+  the 2026-07-14 entry, in the opposite direction (root is the source of
+  truth; deploy is the staging copy). Backfilled both to root and added both
+  root copies to `check-links.sh`'s `PAGES` list, which had silently not been
+  scanning them.
+- **Stray `index1.html` deleted** — an outdated duplicate of the homepage
+  that would ship the old site if ever uploaded by accident (recoverable from
+  git history). `Session Log.html` left in place pending an owner decision.
+- **Rename closeout (platform TECH_DEBT #62d):** the last two `kidgemini`
+  references — `trackEvent('kidgemini_click', …)` on the two games-lab CTA
+  buttons — renamed to `ari_click` (owner decision 2026-07-24; Mixpanel is
+  now the only analytics destination, GA/Clarity having been removed, so the
+  continuity cost is one event stream). Repo now has zero `kidgemini` or
+  `ari.ariantra.com` references.
+- **`llms.txt` added** (root + deploy) — the landing had none despite the
+  sitewide SEO/AI-answer rule; describes all five pages, the sibling
+  surfaces, and how assistants should cite Ariantra.
+- **IP-retention disclosure completed (platform TECH_DEBT #29):**
+  `privacy.html`'s Technical-usage-data row now states that IP is recorded on
+  sign-ins, game plays and score submissions with a short capped history, and
+  adds score-integrity to the purpose. Both copies.
+- **`check-links.sh` grew the fixture-based self-test** the 2026-07-14 entry
+  asked for: `bash scripts/check-links.sh --self-test` runs the checks
+  against `scripts/fixtures/` — two must-be-caught files (one per bug class,
+  including the URL-first `<link>` attribute order the old positional regex
+  missed) and one must-pass-clean file covering every exemption (Google
+  Fonts, absolute metadata, cross-host links). Verified the self-test mode
+  was a silent no-op before implementing it, and that both bad fixtures are
+  caught and the good one passes after.
+- **Not live yet:** all of the above is repo-only until the next
+  `ariantra-deploy/*` upload to Hostinger (the 2026-07-14-era pages went live
+  before this pass — verified 2026-07-24: blog answers 200, games-lab links
+  present).
+
 ### 2026-07-14 — `check-links.sh` was blind to the exact regression it exists to prevent
 
 - **Symptom:** none visible yet — caught by a full-repo review, not a live

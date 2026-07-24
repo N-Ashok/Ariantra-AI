@@ -1,0 +1,10 @@
+<!-- FIXTURE: must be CAUGHT — external stylesheet, URL-FIRST attribute order.
+     This exact order (href before rel) is what the pre-2026-07-14 positional
+     regex silently missed; it reproduces the 2026-07-03 brand-CSS incident. -->
+<!doctype html>
+<html>
+<head>
+  <link href="https://api.ariantra.com/brand/ariantra-brand.v1.css" rel="stylesheet">
+</head>
+<body></body>
+</html>

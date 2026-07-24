@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ── SEO ── -->
+  <title>Blog — AI for Kids, Game Development & Creative Learning | Ariantra</title>
+  <meta name="description" content="The Ariantra blog: how kids build games with AI, the future of game development for children, and why making games teaches creative thinking. No-coding AI classes for kids.">
+  <meta name="keywords" content="ai for kids, game development for kids, build games with AI, kids coding classes, game through AI, creative learning for children">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://ariantra.com/blog.html">
+  <meta name="theme-color" content="#FF5C00">
+
+  <!-- ── Open Graph ── -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ariantra">
+  <meta property="og:title" content="Blog — AI for Kids & Game Development | Ariantra">
+  <meta property="og:description" content="How kids build real games with AI — no coding. Stories, guides, and ideas from Ariantra.">
+  <meta property="og:url" content="https://ariantra.com/blog.html">
+  <meta property="og:image" content="https://ariantra.com/ariantra-site.png">
+  <meta property="og:image:alt" content="Kids building games with AI at Ariantra">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- ── Twitter ── -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog — AI for Kids & Game Development | Ariantra">
+  <meta name="twitter:description" content="How kids build real games with AI — no coding. Stories, guides, and ideas from Ariantra.">
+  <meta name="twitter:image" content="https://ariantra.com/ariantra-site.png">
+
+  <!-- ── Blog structured data ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Ariantra Blog",
+    "url": "https://ariantra.com/blog.html",
+    "description": "How kids build games with AI — no-coding game development classes for children.",
+    "publisher": {
+      "@type": "EducationalOrganization",
+      "name": "Ariantra",
+      "url": "https://ariantra.com/"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0f172a;
+      --white: #FFFFFF;
+      --accent: #FF5C00;
+      --accent-light: #FFF0E8;
+      --grey: #F4F4F4;
+      --text-muted: #777;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    .logo { display: flex; flex-direction: column; align-items: flex-start; text-decoration: none; gap: 0; }
+    .logo-text { font-size: 17px; font-weight: 300; letter-spacing: 7px; text-transform: uppercase; color: var(--black); line-height: 1; }
+    .logo-divider { display: flex; align-items: center; width: 100%; gap: 5px; margin: 4px 0 3px; }
+    .logo-line { flex: 1; height: 1px; background: var(--black); opacity: 0.3; }
+    .logo-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+    .logo-sub { font-size: 7px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-muted); line-height: 1; }
+    .nav-book {
+      background: var(--accent); color: #fff; text-decoration: none;
+      padding: 9px 18px; border-radius: 24px; font-size: 14px; font-weight: 700;
+      white-space: nowrap; transition: background 0.15s;
+    }
+    .nav-book:hover { background: #e65300; }
+
+    /* ── BLOG HEADER ── */
+    .blog-hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 140px 24px 40px;
+    }
+    .blog-hero .eyebrow {
+      color: var(--accent); font-weight: 700; font-size: 13px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+    }
+    .blog-hero h1 { font-size: 42px; font-weight: 800; letter-spacing: -1px; margin: 10px 0 12px; }
+    .blog-hero p { font-size: 17px; color: var(--text-muted); max-width: 620px; }
+
+    /* ── POST GRID ── */
+    .post-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 24px 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+    }
+    .post-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--white);
+      border: 1px solid #eee;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+    }
+    .post-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 36px rgba(15,23,42,0.10);
+      border-color: var(--accent-light);
+    }
+    .post-thumb {
+      height: 170px;
+      background: linear-gradient(135deg, var(--accent) 0%, #ff8a4d 100%);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 800; font-size: 22px; letter-spacing: -0.5px;
+      text-align: center; padding: 0 22px;
+    }
+    .post-body { padding: 22px 22px 26px; }
+    .post-tag { color: var(--accent); font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+    .post-body h2 { font-size: 20px; font-weight: 700; line-height: 1.35; margin: 8px 0 10px; }
+    .post-body p { font-size: 14.5px; color: var(--text-muted); }
+    .post-meta { margin-top: 14px; font-size: 13px; color: #94a3b8; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--black); color: #cbd5e1; padding: 56px 24px 28px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer-brand .footer-logo { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+    .footer-brand .footer-logo span { color: var(--accent); }
+    .footer-tag { font-size: 13px; color: #94a3b8; margin: 6px 0 14px; }
+    .footer-desc { font-size: 13.5px; line-height: 1.7; color: #94a3b8; max-width: 360px; }
+    .footer-col h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #fff; margin-bottom: 14px; }
+    .footer-col a, .footer-col p { display: block; font-size: 13.5px; line-height: 1.6; color: #94a3b8; text-decoration: none; margin-bottom: 10px; }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding-top: 20px; font-size: 12px; color: #64748b; }
+
+    @media (max-width: 800px) {
+      .blog-hero h1 { font-size: 32px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    }
+  
+    /* ── Unified classic header (stable across all Ariantra pages) ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #eee;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 26px; }
+    .nav-links .nav-link {
+      text-decoration: none; color: var(--black);
+      font-size: 14px; font-weight: 600; transition: color 0.15s;
+    }
+    .nav-links .nav-link:hover { color: var(--accent); }
+    .nav-links .nav-signin { color: var(--text-muted); }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .nav-book {
+      background: var(--accent); color: #fff; text-decoration: none;
+      padding: 9px 18px; border-radius: 24px; font-size: 14px; font-weight: 700;
+      white-space: nowrap; transition: background 0.15s;
+    }
+    .nav-book:hover { background: #e65300; }
+    .nav-burger {
+      display: none; flex-direction: column; justify-content: center; gap: 4px;
+      width: 40px; height: 40px; padding: 8px;
+      background: none; border: 1px solid #e5e7eb; border-radius: 8px; cursor: pointer;
+    }
+    .nav-burger span { display: block; height: 2px; background: var(--black); border-radius: 2px; transition: transform 0.2s, opacity 0.2s; }
+    .nav-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    @media (max-width: 860px) {
+      .nav-burger { display: flex; }
+      .nav-links {
+        display: none;
+        position: fixed; top: 69px; left: 0; right: 0;
+        flex-direction: column; align-items: flex-start; gap: 0;
+        background: #fff; border-bottom: 1px solid #eee;
+        padding: 8px 0; box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links .nav-link { display: block; width: 100%; padding: 13px 24px; font-size: 15px; }
+      .nav-book { padding: 9px 14px; font-size: 13px; }
+    }
+  </style>
+<!-- Mixpanel analytics (privacy-hardened: masked recordings, no input/text
+     capture, no IP stored). Source of truth: Ariantra-Platform
+     src/lib/telemetry/mixpanel-snippet.ts — re-copy if that changes. -->
+<script type="text/javascript">
+(function(e,c){if(!c.__SV){var l,h;window.mixpanel=c;c._i=[];c.init=function(q,r,f){function t(d,a){var g=a.split(".");2==g.length&&(d=d[g[0]],a=g[1]);d[a]=function(){d.push([a].concat(Array.prototype.slice.call(arguments,0)))}}var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";b.people=b.people||[];b.toString=function(d){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);d||(a+=" (stub)");return a};b.people.toString=function(){return b.toString(1)+".people (stub)"};l="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders start_session_recording stop_session_recording people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");for(h=0;h<l.length;h++)t(b,l[h]);var n="set set_once union unset remove delete".split(" ");b.get_group=function(){function d(p){a[p]=function(){b.push([g,[p].concat(Array.prototype.slice.call(arguments,0))])}}for(var a={},g=["get_group"].concat(Array.prototype.slice.call(arguments,0)),m=0;m<n.length;m++)d(n[m]);return a};c._i.push([q,r,f])};c.__SV=1.2;var k=e.createElement("script");k.type="text/javascript";k.async=!0;k.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=e.getElementsByTagName("script")[0];e.parentNode.insertBefore(k,e)}})(document,window.mixpanel||[]);
+mixpanel.init('6c7d47ee4e9c7d1a2634c3ad4d4e8295', {
+  autocapture: {
+    pageview: 'full-url',
+    click: true,
+    input: false,
+    scroll: true,
+    submit: true,
+    capture_text_content: false,
+  },
+  record_sessions_percent: 100,
+  record_mask_text_selector: '*',
+  record_block_selector: 'img, video, iframe',
+  ip: false,
+});
+</script>
+<link rel="icon" type="image/png" sizes="192x192" href="https://api.ariantra.com/brand/ariantra-favicon.png">
+<link rel="icon" type="image/svg+xml" href="https://api.ariantra.com/brand/ariantra-favicon.svg">
+<link rel="apple-touch-icon" href="https://api.ariantra.com/brand/apple-touch-icon.png">
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo">
+      <span class="logo-text">Ariantra</span>
+      <span class="logo-divider">
+        <span class="logo-line"></span>
+        <span class="logo-dot"></span>
+        <span class="logo-line"></span>
+      </span>
+      <span class="logo-sub">AI Foundry</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="https://games.ariantra.com" class="nav-link">Games</a>
+      <a href="https://games-lab.ariantra.com" class="nav-link">Games-Lab</a>
+      <a href="/#how" class="nav-link">How it works</a>
+      <a href="/#videos" class="nav-link">Videos</a>
+      <a href="https://studio.ariantra.com" class="nav-link">Studio</a>
+      <a href="https://studio.ariantra.com" class="nav-link nav-signin">Log in</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://games-lab.ariantra.com" class="nav-book">Create your first game</a>
+      <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="blog-hero">
+    <div class="eyebrow">Ariantra Blog</div>
+    <h1>AI, Kids &amp; the Joy of Building Games</h1>
+    <p>Stories and guides on how children build real games with AI — no coding required — and why making things is how kids learn to think.</p>
+  </header>
+
+  <main class="post-grid">
+
+    <a class="post-card" href="/how-kids-build-games-with-ai.html">
+      <div class="post-thumb">How Kids Build Their First Game With AI</div>
+      <div class="post-body">
+        <span class="post-tag">Guide</span>
+        <h2>How Kids Build Their First Game With AI (No Coding)</h2>
+        <p>A look inside a 45-minute session: how a child goes from "I want to make a racing game" to playing their own creation — with AI as their developer.</p>
+        <div class="post-meta">8 min read</div>
+      </div>
+    </a>
+
+    <!-- Duplicate this <a class="post-card"> block for each new post you add. -->
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="footer-logo">Ariantra<span>.</span></div>
+          <div class="footer-tag">AI Foundry — Game Building for Kids</div>
+          <p class="footer-desc">
+            We help kids aged 7–16 turn their own ideas into real, playable games — with AI as
+            their developer. No coding required, no templates. Just imagination, building, and
+            the pride of making something real. Built in India, for curious young creators everywhere.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:contact@ariantra.com">contact@ariantra.com</a>
+          <a href="tel:+917204404452">Call us: +91 72044 04452</a>
+          <a href="https://wa.me/917204404452?text=Hi%2C%20I%27d%20like%20to%20book%20a%20free%20first%20session%20for%20my%20kid." target="_blank">WhatsApp: +91 72044 04452</a>
+          <p>400-A, 4th Floor, Yusuf Sarai Commercial Complex, Hauz Khas, New Delhi – 110016, India</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="/#faq">FAQ</a>
+          <a href="/#team">Our team</a>
+          <a href="/blog.html">Blog</a>
+          <a href="/">ariantra.com</a>
+          <a href="https://markszen.com" target="_blank">MarksZen (our AI grading platform)</a>
+          <a href="https://www.linkedin.com/company/ariantra/" target="_blank">LinkedIn</a>
+          <a href="https://www.youtube.com/@ariantra-ai" target="_blank">YouTube</a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Ariantra AI Foundry Private Limited. Made with curiosity in India.</span>
+        <div class="footer-legal">
+          <span><a href="/terms.html">Terms &amp; Conditions</a> &nbsp;·&nbsp; <a href="/privacy.html">Privacy Policy</a></span>
+          <span>CIN: U63119DL2026PTC465754</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var burger = document.getElementById('navBurger');
+      var links = document.getElementById('navLinks');
+      if (!burger || !links) return;
+      burger.addEventListener('click', function () {
+        var open = links.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+      links.addEventListener('click', function (e) {
+        if (e.target.closest('a')) { links.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); }
+      });
+    })();
+  </script>
+</body>
+</html>
